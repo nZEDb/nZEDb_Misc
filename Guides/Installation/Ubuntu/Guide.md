@@ -215,7 +215,28 @@ they require a different configuration.
 >**Nginx:**  
 >TODO (will be added in the future)
 
-### Step 9 *Installing extra, optional software:*
+### Step 9 *Configuring PHP:*
+
+>Open php.ini for the CLI SAPI:
+>>`sudo nano /etc/php5/cli/php.ini`
+
+>Change the following settings:
+>>`max_execution_time = 120`
+
+>The following can be set to `-1` if you have a large amount of system RAM (>=8GB):
+>>`memory_limit = 1024M`
+
+>Change your timezone from a list of timezones [here](http://php.net/manual/en/timezones.php). **Remove the preceding ;**
+>>`date.timezone = YourLocalTimezone`
+
+>Close and save this file.
+
+>Open the Web SAPI php.ini.  
+If you have installed Apache2: `nano /etc/php5/apache2/php.ini`  
+If you have installed Nginx:   `nano /etc/php5/fpm/php.ini`  
+>Change the settings using the same settings as the CLI SAPI.
+
+### Step 10 *Installing extra, optional software:*
 
 >*[Unrar](http://en.wikipedia.org/wiki/Unrar):*
 
@@ -313,7 +334,7 @@ https://github.com/jonnyboy/installers/blob/master/compile_ffmpeg.sh
 
 ---
 
-### Step 10 *Acquiring nZEDb:*
+### Step 11 *Acquiring nZEDb:*
 
 >Install git:
 >>`sudo apt-get install git`
@@ -335,7 +356,7 @@ You can find this by typing : `echo $USER`
 `sudo usermod -a -G www-data YourUnixUserName`  
 `sudo chmod -R 774 /var/www/nZEDb`
 
-### Step 11 *Setting up nZEDb:*
+### Step 12 *Setting up nZEDb:*
 
 >Open up an internet browser, 
 head to `http://IpAddressOfYourServer/install` 
