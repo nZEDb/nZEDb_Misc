@@ -244,11 +244,11 @@ If you have installed Nginx:   `nano /etc/php5/fpm/php.ini`
 >> `sudo apt-get install unrar`
 
 >You can also install it by downloading the newest version:  
->Go to http://www.rarlab.com/download.htm, look for the newest unrar version (currently RAR 5.10 beta 4), right click it and copy the link.  
+>Go to http://www.rarlab.com/download.htm, look for the newest unrar version (currently RAR 5.10), right click it and copy the link.  
 >Replace the link below with the one you copied:
 >>`mkdir -p ~/new_unrar`  
 `cd ~/new_unrar`  
-`wget http://www.rarlab.com/rar/rarlinux-x64-5.1.b4.tar.gz`
+`wget http://www.rarlab.com/rar/rarlinux-x64-5.1.0.tar.gz`
 `tar -xzf rarlinux*.tar.gz`  
 `sudo mv /usr/bin/unrar /usr/bin/unrar4`  
 `sudo mv rar/unrar /usr/bin/unrar`  
