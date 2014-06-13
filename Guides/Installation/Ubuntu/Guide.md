@@ -248,7 +248,7 @@ If you have installed Nginx:   `nano /etc/php5/fpm/php.ini`
 >Replace the link below with the one you copied:
 >>`mkdir -p ~/new_unrar`  
 `cd ~/new_unrar`  
-`wget http://www.rarlab.com/rar/rarlinux-x64-5.1.0.tar.gz`
+`wget http://www.rarlab.com/rar/rarlinux-x64-5.1.0.tar.gz`  
 `tar -xzf rarlinux*.tar.gz`  
 `sudo mv /usr/bin/unrar /usr/bin/unrar4`  
 `sudo mv rar/unrar /usr/bin/unrar`  
