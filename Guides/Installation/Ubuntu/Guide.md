@@ -122,9 +122,11 @@ We recommend MariaDB for most people.
 
 >In the following line, change YourMySQLUsername for the username 
 you will use to connect to MySQL in nZEDb (root for example).
-Also change the YourMySQLServerIPAddress to the IP of the server 
-(127.0.0.1 or localhost for example). Do not remove the single quotes.
->>`GRANT FILE ON *.* TO 'YourMySQLUsername'@'YourMySQLServerIPAddress';`
+Also change the YourMySQLServerHostName to the hostname of the server. 
+Do not remove the quotes between the name and hostname.  
+If your MySQL server is local, use localhost. If remote, try the domain name or IP address.  
+It has been reported 127.0.0.1 does not work for the hostname.  
+>>`GRANT FILE ON *.* TO 'YourMySQLUsername'@'YourMySQLServerHostName';`
 
 >Exit MySQL:
 >>`\q`
