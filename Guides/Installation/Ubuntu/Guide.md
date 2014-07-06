@@ -219,7 +219,6 @@ they require a different configuration.
 ---
 
 >**Nginx:**  
->This part of the guide is WIP, some things might not work, be warned.  
 
 >Install Nginx:
 >>`sudo apt-get install -y nginx`
@@ -289,9 +288,10 @@ The fastcgi_pass can be changed to TCP by uncommenting it, sockets are faster ho
 
 >Save and exit nano.
 
->Edit nginx to listen on a TCP connection OR a socket file. Sockets are faster, depending on your setup you might require a TCP connection, so I will show both ways.
+>If you have changed the fastcgi_pass to tcp (127.0.0.1:9000), you must edit www.conf to listen on it instead of sockets:
 >>`sudo nano /etc/php5/fpm/pool.d/www.conf`  
-Change 
+Change `listen = /var/run/php5-fpm.sock` to `listen = 127.0.0.1:9000`  
+Save and exit nano.
 
 >Create a log folder if it does not exist:
 >>`sudo mkdir -p /var/log/nginx`  
