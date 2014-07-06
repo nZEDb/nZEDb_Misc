@@ -120,7 +120,7 @@ We recommend MariaDB for most people.
 >Log in to MySQL:
 >>`sudo mysql -p`
 
->In the following line, change YourMySQLUsername for the username 
+>In the following command line, change YourMySQLUsername for the username 
 you will use to connect to MySQL in nZEDb (root for example).  
 Also change the YourMySQLServerHostName to the hostname of the server.  
 If your MySQL server is local, use localhost. If remote, try the domain name or IP address.  
