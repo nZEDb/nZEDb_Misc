@@ -65,11 +65,12 @@ You can read more on Apparmor [here](http://en.wikipedia.org/wiki/AppArmor).
 >>`sudo apt-get install apparmor-utils`  
 `sudo aa-complain /usr/sbin/mysqld`  
 
-If this does not work, try [this tutorial](http://www.cyberciti.biz/faq/ubuntu-linux-howto-disable-apparmor-commands/).
+>If this does not work, try [this tutorial](http://www.cyberciti.biz/faq/ubuntu-linux-howto-disable-apparmor-commands/).
 
 ---
 
 >**You MUST reboot your server after doing this!**
+>>`sudo reboot`
 
 ### Step 6 *Installing a MySQL server and client:*
 >You have multiple choices when it comes to a MySQL server and client,
@@ -114,7 +115,7 @@ We recommend MariaDB for most people.
 >>`max_allowed_packet = 16M`  
 `group_concat_max_len = 8192`
 
->Consider raising the key_buffer_size to 256M
+>Consider raising the key_buffer_size to 256M to start, later on you can raise this more as your database grows.
 
 ---
 
@@ -355,7 +356,7 @@ simple_php_yenc_decode or yydecode installed.
 
 >Set the permissions:
 
->During the install (next step of this guide) you can set perms to 777 to make things easier:
+>During the install (next step of this guide) you should set perms to 777 to make things easier, otherwise you might fail on step 2 of the web install:
 >>`sudo chmod -R 777 /var/www/nZEDb`
 
 >After installation you can properly set your permissions.  
