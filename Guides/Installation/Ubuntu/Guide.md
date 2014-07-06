@@ -245,7 +245,7 @@ If you have installed Nginx:   `nano /etc/php5/fpm/php.ini`
 >You can install Unrar from the repositories, but it's quite old (version 4):
 >> `sudo apt-get install unrar`
 
->You can also install it by downloading the newest version:  
+>You can also install it by downloading the newest version (recommended, as some RAR files require version 5+):  
 >Go to http://www.rarlab.com/download.htm, look for the newest unrar version (currently RAR 5.10), right click it and copy the link.  
 >Replace the link below with the one you copied:
 >>`mkdir -p ~/new_unrar`  
@@ -301,13 +301,17 @@ https://github.com/jonnyboy/installers/blob/master/compile_ffmpeg.sh
 
 >You have 3 choices:
 
->simple_php_yenc_decode is a PHP extension which offers the best performance of the 3 options.
+>simple_php_yenc_decode is a PHP extension written in C++ which offers the best performance of the 3 options. 
+This is highly recommended as there is a massive performance boost over the PHP way. This is quite easy to install so it is worth it.
 
->yydecode is an application written in C, it decodes yEnc files, it offers moderate performance.
+>yydecode is an application written in C, it decodes yEnc files, it offers moderate performance. 
+The results vary in terms of performance, this requires disk I/O since the yEnc data has to be written 
+to the disk. Mounting the folder to RAM (tmpfs) improves I/O but is still slower than simple_php_yenc_decode.
 
->Alternatively, nZEDb has a PHP method which decodes yEnc but has very poor performance.
+>Alternatively, nZEDb has a PHP method which decodes yEnc but has very poor performance, this is good if you can't get 
+simple_php_yenc_decode or yydecode installed.
 
->You can change to any of the three at any time in site-edit part of the site.
+>You can change between any of the three at any time in site-edit part of the site if you have issues or want to test performance.
 
 >*[simple_php_yenc_decode](https://github.com/kevinlekiller/simple_php_yenc_decode):*
 
