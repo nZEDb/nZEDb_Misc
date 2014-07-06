@@ -27,6 +27,7 @@ but higher versions (PHP 5.5 and MySQL 5.6 to be exact) are recommended.
 ---
 
 >You must now reboot your server.
+>>`sudo reboot`
 
 ### Step 2 *Installing pre-requisite software:*
 >These programs will be used later on to install additional software.  
@@ -37,8 +38,7 @@ They might already be installed on your operating system.
 ### Step 3 **[Optional]** *Adding a repository for the newest PHP and Apache:*
 >This will give you the latest PHP and Apache, PHP 5.5 is highly recomended, 
 if you operating system does not having PHP 5.5, please add this repository.
->>`sudo apt-get install software-properties-common`  
-`sudo add-apt-repository ppa:ondrej/php5`  
+>>`sudo add-apt-repository ppa:ondrej/php5`  
 `sudo apt-get update`
 
 ### Step 4 *Installing PHP and the required extensions:*
@@ -55,14 +55,17 @@ You can read more on Apparmor [here](http://en.wikipedia.org/wiki/AppArmor).
 
 ---
 
->Option 1: Making Apparmor ignore MySQL
->>`sudo apt-get install apparmor-utils`  
-`sudo aa-complain /usr/sbin/mysqld`
+>Option 1: Disabling Apparmor
+>>`sudo update-rc.d apparmor disable`
+
 
 ---
 
->Option 2: Disabling Apparmor
->>`sudo update-rc.d apparmor disable`
+>Option 2: Making Apparmor ignore MySQL
+>>`sudo apt-get install apparmor-utils`  
+`sudo aa-complain /usr/sbin/mysqld`  
+
+If this does not work, try [this tutorial](http://www.cyberciti.biz/faq/ubuntu-linux-howto-disable-apparmor-commands/).
 
 ---
 
