@@ -219,7 +219,94 @@ they require a different configuration.
 ---
 
 >**Nginx:**  
->TODO (will be added in the future)
+>This part of the guide is WIP, some things might not work, be warned.  
+
+>Install Nginx:
+>>`sudo apt-get install -y nginx`
+
+>Install php fpm, which sends the PHP files to Nginx:
+>>`sudo apt-get install -y php5-fpm`
+
+>Create a nginx configuration file for your nZEDb website:
+>>`sudo nano /etc/nginx/sites-available/nZEDb`
+
+>Paste the following into the file, change the settings as needed:  
+The fastcgi_pass can be changed to TCP by uncommenting it, sockets are faster however.
+
+    server {
+        # Change these settings to match your machine.
+        listen 80 default_server;
+        server_name localhost;
+        
+        # These are the log locations, you should not have to change these.
+        access_log /var/log/nginx/access.log;
+        error_log /var/log/nginx/error.log;
+        
+        # This is the root web folder for nZEDb, you shouldn't have to change this.
+        root /var/www/nZEDb/www/;
+        index index.html index.htm index.php;
+        
+        # Everything below this until should not be changed unless noted.
+        location ~* \.(?:ico|css|js|gif|inc|txt|gz|xml|png|jpe?g) {
+            expires max;
+            add_header Pragma public;
+            add_header Cache-Control "public, must-revalidate, proxy-revalidate";
+        }
+        
+        location / {
+            try_files $uri $uri/ @rewrites;
+        }
+        
+        location ^~ /covers/ {
+            # This is where the nZEDb covers folder should be in.
+            root /var/www/nZEDb/resources;
+        }
+        
+        location @rewrites {
+            rewrite ^/([^/\.]+)/([^/]+)/([^/]+)/? /index.php?page=$1&id=$2&subpage=$3 last;
+            rewrite ^/([^/\.]+)/([^/]+)/?$ /index.php?page=$1&id=$2 last;
+            rewrite ^/([^/\.]+)/?$ /index.php?page=$1 last;
+        }
+        
+        location /admin {
+        }
+        
+        location /install {
+        }
+        
+        location ~ \.php$ {
+            include /etc/nginx/fastcgi_params;
+            
+            # Uncomment the following line and comment the .sock line if you want to use TCP.
+            #fastcgi_pass 127.0.0.1:9000;
+            fastcgi_pass unix:/var/run/php5-fpm.sock;
+            
+            # The next two lines should go in your fastcgi_params
+            fastcgi_index index.php;
+            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        }
+    }
+
+>Save and exit nano.
+
+>Edit nginx to listen on a TCP connection OR a socket file. Sockets are faster, depending on your setup you might require a TCP connection, so I will show both ways.
+>>`sudo nano /etc/php5/fpm/pool.d/www.conf`  
+Change 
+
+>Create a log folder if it does not exist:
+>>`sudo mkdir -p /var/log/nginx`  
+`sudo chmod 755 /var/log/nginx`
+
+>Delete the default Nginx site:
+>>`sudo unlink /etc/nginx/sites-enabled/default`
+
+>Make nZEDb the default Nginx site:
+>>`sudo ln -s /etc/nginx/sites-available/nZEDb /etc/nginx/sites-enabled/nZEDb`
+
+>Restart Nginx:
+>>`sudo service nginx restart`
+
+---
 
 ### Step 9 *Configuring PHP:*
 
@@ -241,6 +328,10 @@ they require a different configuration.
 If you have installed Apache2: `nano /etc/php5/apache2/php.ini`  
 If you have installed Nginx:   `nano /etc/php5/fpm/php.ini`  
 >Change the settings using the same settings as the CLI SAPI.
+
+>Restart Apache2 or Nginx:
+>>`sudo service apache2 restart`
+>>`sudo service nginx restart`
 
 ### Step 10 *Installing extra, optional software:*
 
