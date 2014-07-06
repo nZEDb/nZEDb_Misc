@@ -104,7 +104,7 @@ We recommend MariaDB for most people.
 `sudo apt-get install percona-server-server-5.5 percona-server-client-5.5 libmysqlclient-dev`
 
 ### Step 7 *Configuring MySQL:*
->Edit my.cnf:
+>Edit my.cnf (the location can vary, type `mysqld -v --help | grep -A 1 'Default options' | sed -n '2 p'` to find all the possible locations):
 >>`sudo nano /etc/my.cnf`
 
 >Add (or change them if they already exist) the following:
