@@ -246,7 +246,7 @@ The fastcgi_pass can be changed to TCP by uncommenting it, sockets are faster ho
         root /var/www/nZEDb/www/;
         index index.html index.htm index.php;
         
-        # Everything below this until should not be changed unless noted.
+        # Everything below this should not be changed unless noted.
         location ~* \.(?:ico|css|js|gif|inc|txt|gz|xml|png|jpe?g) {
             expires max;
             add_header Pragma public;
