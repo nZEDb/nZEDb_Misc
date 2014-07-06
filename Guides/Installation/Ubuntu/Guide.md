@@ -121,11 +121,11 @@ We recommend MariaDB for most people.
 >>`sudo mysql -p`
 
 >In the following line, change YourMySQLUsername for the username 
-you will use to connect to MySQL in nZEDb (root for example).
-Also change the YourMySQLServerHostName to the hostname of the server. 
-Do not remove the quotes between the name and hostname.  
+you will use to connect to MySQL in nZEDb (root for example).  
+Also change the YourMySQLServerHostName to the hostname of the server.  
 If your MySQL server is local, use localhost. If remote, try the domain name or IP address.  
 It has been reported 127.0.0.1 does not work for the hostname.  
+Do not remove the quotes between the name and hostname.  
 >>`GRANT FILE ON *.* TO 'YourMySQLUsername'@'YourMySQLServerHostName';`
 
 >Exit MySQL:
