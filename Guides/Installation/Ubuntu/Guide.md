@@ -330,8 +330,8 @@ If you have installed Nginx:   `nano /etc/php5/fpm/php.ini`
 >Change the settings using the same settings as the CLI SAPI.
 
 >Restart Apache2 or Nginx:
->>`sudo service apache2 restart`
->>`sudo service nginx restart`
+>>`sudo service apache2 restart`  
+`sudo service nginx restart`
 
 ### Step 10 *Installing extra, optional software:*
 
