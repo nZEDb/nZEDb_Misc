@@ -465,29 +465,55 @@ You can find this by typing : `echo $USER`
 head to `http://IpAddressOfYourServer/install` 
 changing IpAddressOfYourServer for the IP of your server.
 
->When you are done, create Amazon/Trakt/Tmdb/etc API keys 
-(the keys we provide are used by many people so you will get nothing from them - 
-all these services throttle requests).
-
->Next, head to the edit site section, fill out the keys, 
+>Next, head to the edit site section, 
 turn on header compression if your server supports it,
 put in paths to optional software, like unrar/ffmpeg/etc..
 
->Go to the view groups section, turn on a group or 2 (alt.binaries.teevee for example).
+>To figure out the path to the optional software, type `which` followed by the name of the program.  
+Example: `which unrar`
 
->Run the scripts in /var/www/nZEDb/misc/update/ 
-(update_binaries to download headers and update_releases to create NZB's from the headers).
+>Signing up to all the API services(Amazon/Trakt/Rotten tomatoes/etc) is recommended, the keys we offer are used by many
+nZEDb sites and are throttled so you will get almost no results from those.
 
->You can also run automated scripts, in /var/www/nZEDb/misc/update/nix  
-An easy one to run is simple.sh:  
-`cd /var/www/nZEDb/misc/update/nix/screen/sequential/`  
-Install screen, which lets you run applications and close your terminal.  
-`sudo apt-get install screen`  
-Run the script in screen:  
-`screen sh simple.sh`  
-Detach from screen (this lets you close your terminal while the scripts still run in the background):  
-`control+a d`  
-Re-atach to screen:  
-`screen -x`
+### Step 13 *Indexing:*
+
+>Head to the "view groups" admin section of the site. (http://localhost/admin/group-list.php)  
+
+>Turn on a group or two (alt.binaries.teevee is recommended).
+
+>Move to the indexing script location in your terminal:
+>>`cd /var/www/nZEDb/misc/update/`
+
+>Download binary headers from usenet:
+>>`php update_binaries.php`
+
+>When that is complete, create releases and NZB files using those headers:
+>>`php update_releases.php 1 true`
+
+---
+
+>You can automate the above process.
+
+>First install screen, screen can let you run applications in the background while closing your terminal.
+>>`sudo apt-get install screen`
+
+>Move to the screen automated scripts folder:
+>>`cd /var/www/nZEDb/misc/update/nix/screen/sequential/`
+
+>Run the script using screen:
+>>`screen sh simple.sh`
+
+>Now everything will run automatically.
+
+>You can detach from the script, allowing you to close your terminal:
+>>Press control and a together, let go and press d : `control+a d`
+
+>If you want to re-attach to screen to see what is going on, type `screen -x`
+
+---
+
+>There are other automated scripts that are more advanced, you will have to do research or ask in the forums/IRC how to use them.
+
+### Conclusion
 
 >For questions, check the [FAQ](https://github.com/nZEDb/nZEDb/blob/master/docs/FAQ.txt)/[Wiki](https://github.com/nZEDb/nZEDb/wiki)/[Forum](http://forums.nzedb.com/) or join IRC, server [Synirc](https://www.synirc.net/servers) channel #nZEDb
