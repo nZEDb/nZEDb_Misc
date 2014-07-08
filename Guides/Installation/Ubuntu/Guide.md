@@ -477,7 +477,7 @@ nZEDb sites and are throttled so you will get almost no results from those.
 
 ### Step 13 *Indexing:*
 
-#### Manual indexing:  
+##### Manual indexing:  
 
 >Head to the "view groups" admin section of the site. (http://IpAddressOfYourServer/admin/group-list.php)  
 
@@ -494,14 +494,14 @@ nZEDb sites and are throttled so you will get almost no results from those.
 
 ---
 
->**Automatic Indexing:**  
+##### Automatic indexing:  
 
->You can automate the above process.
+>**Using the screen sequential scripts:**
 
 >First install screen, screen can let you run applications in the background while closing your terminal.
 >>`sudo apt-get install screen`
 
->Move to the screen automated scripts folder:
+>Move to the screen sequential folder:
 >>`cd /var/www/nZEDb/misc/update/nix/screen/sequential/`
 
 >Run the script using screen:
@@ -516,7 +516,7 @@ nZEDb sites and are throttled so you will get almost no results from those.
 
 ---
 
->There are other automated scripts that are more advanced, you will have to do research or ask in the forums/IRC how to use them.
+>There are other automated scripts, you can open them in a text editor to see what they do.
 
 ### Conclusion
 
