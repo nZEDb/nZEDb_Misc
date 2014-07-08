@@ -585,7 +585,7 @@ nZEDb sites and are throttled so you will get almost no results from those.
 
 >**Comment sharing:**
 
->WIP.
+>It is possible to share comments between nZEDb sites, please view the guide located [here](https://github.com/nZEDb/nZEDb_Misc/blob/master/Guides/Various/Sharing/Guide.md).
 
 ### Conclusion
 
