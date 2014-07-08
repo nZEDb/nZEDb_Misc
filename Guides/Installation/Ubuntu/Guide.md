@@ -37,7 +37,7 @@ They might already be installed on your operating system.
 
 ### Step 3 **[Optional]** *Adding a repository for the newest PHP and Apache:*
 >This will give you the latest PHP and Apache, PHP 5.5 is highly recomended, 
-if you operating system does not having PHP 5.5, please add this repository.
+if you operating system does not have PHP 5.5, please add this repository.
 >>`sudo add-apt-repository ppa:ondrej/php5`  
 `sudo apt-get update`
 
@@ -75,7 +75,8 @@ You can read more on Apparmor [here](http://en.wikipedia.org/wiki/AppArmor).
 ### Step 6 *Installing a MySQL server and client:*
 >You have multiple choices when it comes to a MySQL server and client,
 you will need to do some research to figure out which is the best for you.
-We recommend MariaDB for most people.
+We recommend MariaDB for most people.  
+Only install one of the following three to avoid issues.
 
 >[MySQL](http://dev.mysql.com/doc/refman/5.6/en/features.html):
 >>`sudo apt-get install mysql-server mysql-client libmysqlclient-dev`
@@ -136,7 +137,8 @@ Do not remove the quotes between the name and hostname.
 >>`\q`
 
 ### Step 8 *Installing and configuring a web server:*
->You have many options. We will however show you 2 options, Apache2 or Nginx.
+>You have many options. We will however show you 2 options, Apache2 or Nginx.  
+Only install Apache2 or Nginx, do not install both to avoid issues.
 
 >*[Apache](http://httpd.apache.org/):*  
 >>`sudo apt-get install apache2`
@@ -325,8 +327,8 @@ Save and exit nano.
 >Close and save this file.
 
 >Open the Web SAPI php.ini.  
-If you have installed Apache2: `nano /etc/php5/apache2/php.ini`  
-If you have installed Nginx:   `nano /etc/php5/fpm/php.ini`  
+If you have installed Apache2: `sudo nano /etc/php5/apache2/php.ini`  
+If you have installed Nginx:   `sudo nano /etc/php5/fpm/php.ini`  
 >Change the settings using the same settings as the CLI SAPI.
 
 >Restart Apache2 or Nginx:
@@ -476,6 +478,16 @@ put in paths to optional software, like unrar/ffmpeg/etc..
 >Run the scripts in /var/www/nZEDb/misc/update/ 
 (update_binaries to download headers and update_releases to create NZB's from the headers).
 
->You can also run automated scripts, in /var/www/nZEDb/misc/update/nix
+>You can also run automated scripts, in /var/www/nZEDb/misc/update/nix  
+An easy one to run is simple.sh:  
+`cd /var/www/nZEDb/misc/update/nix/screen/sequential/`  
+Install screen, which lets you run applications and close your terminal.  
+`sudo apt-get install screen`  
+Run the script in screen:  
+`screen sh simple.sh`  
+Detach from screen (this lets you close your terminal while the scripts still run in the background):  
+`control+a d`  
+Re-atach to screen:  
+`screen -x`
 
 >For questions, check the [FAQ](https://github.com/nZEDb/nZEDb/blob/master/docs/FAQ.txt)/[Wiki](https://github.com/nZEDb/nZEDb/wiki)/[Forum](http://forums.nzedb.com/) or join IRC, server [Synirc](https://www.synirc.net/servers) channel #nZEDb
