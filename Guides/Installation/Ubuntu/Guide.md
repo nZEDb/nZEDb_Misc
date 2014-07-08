@@ -569,6 +569,18 @@ nZEDb sites and are throttled so you will get almost no results from those.
 
 ---
 
+### Step 14 *Extra, optional stuff:*
+
+>**IRCScraper:**
+
+>IRCSraper is a bot that connects to a IRC server to dowload PreDB information into your nZEDb SQL database.
+
+>This helps renaming releases and gives extra information on your releases.
+
+>Follow [this](https://github.com/nZEDb/nZEDb_Misc/blob/master/Guides/Various/ZNC/Guide.md) guide to set up ZNC, then follow [this](https://github.com/nZEDb/nZEDb_Misc/blob/master/Guides/Various/IRCScraper/Guide.md) guide to set up IRCScraper.
+
+---
+
 >There are other automated scripts, you can open them in a text editor or ask around / do research to see what they do.
 
 ### Conclusion
