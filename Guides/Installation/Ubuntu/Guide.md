@@ -569,6 +569,8 @@ nZEDb sites and are throttled so you will get almost no results from those.
 
 ---
 
+>There are other automated scripts, you can open them in a text editor or ask around / do research to see what they do.
+
 ### Step 14 *Extra, optional stuff:*
 
 >**IRCScraper:**
@@ -581,7 +583,9 @@ nZEDb sites and are throttled so you will get almost no results from those.
 
 ---
 
->There are other automated scripts, you can open them in a text editor or ask around / do research to see what they do.
+>**Comment sharing:**
+
+>WIP.
 
 ### Conclusion
 
