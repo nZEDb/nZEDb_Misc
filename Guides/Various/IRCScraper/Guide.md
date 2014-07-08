@@ -2,7 +2,6 @@ IRCScraper Setup Guide
 ======================
 
 ### Notes:
->This is for non-tmux, a tmux guide might be added in the future.
 
 >ZNC is recommended, please go through the ZNC guide [here](https://github.com/nZEDb/nZEDb_Misc/tree/master/Guides/Various/ZNC/Guide.md) first.
 
@@ -43,6 +42,9 @@ regex.
 >Exit and save nano (control+x)
 
 ### Step 3 *Starting the scraper:*
+
+>**NON TMUX USERS:**
+
 >Using screen is recommended so you can close  
 your terminal/ssh session and keep the scraper running:
 >>`sudo apt-get install screen`
@@ -53,7 +55,15 @@ your terminal/ssh session and keep the scraper running:
 >To detach from the screen session, press the following keyboard combination:
 >>Control and A together, then let go and press D
 
-### Step 4 **[OPTIONAL]** *Setting up a script to start and check if the scraper is running:*
+>**TMUX USERS:**
+
+>Head to the tmux-edit page of your web site (http://IpAddressOfYourServer/admin/tmux-edit.php).
+
+>Change `Enable IRCScraper` to `yes`.
+
+>Save your settings at the bottom of the page.
+
+### Step 4 **[OPTIONAL]** *Setting up a script to start and check if the scraper is running (NON TMUX USERS):*
 >You can set up a simple shell script to continuously check if the scraper is still running.
 
 >Create a empty shell script:
