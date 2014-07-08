@@ -477,6 +477,8 @@ nZEDb sites and are throttled so you will get almost no results from those.
 
 ### Step 13 *Indexing:*
 
+>**Manual indexing:**  
+
 >Head to the "view groups" admin section of the site. (http://IpAddressOfYourServer/admin/group-list.php)  
 
 >Turn on a group or two (alt.binaries.teevee is recommended).
@@ -491,6 +493,8 @@ nZEDb sites and are throttled so you will get almost no results from those.
 >>`php update_releases.php 1 true`
 
 ---
+
+>**Automatic Indexing:**  
 
 >You can automate the above process.
 
