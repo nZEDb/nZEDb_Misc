@@ -477,7 +477,7 @@ nZEDb sites and are throttled so you will get almost no results from those.
 
 ### Step 13 *Indexing:*
 
->Head to the "view groups" admin section of the site. (http://localhost/admin/group-list.php)  
+>Head to the "view groups" admin section of the site. (http://IpAddressOfYourServer/admin/group-list.php)  
 
 >Turn on a group or two (alt.binaries.teevee is recommended).
 
