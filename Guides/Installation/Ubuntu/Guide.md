@@ -496,7 +496,7 @@ nZEDb sites and are throttled so you will get almost no results from those.
 
 ##### Automatic indexing:  
 
->**Using the screen sequential scripts:**
+>**Indexing using the screen sequential scripts:**
 
 >First install screen, screen can let you run applications in the background while closing your terminal.
 >>`sudo apt-get install screen`
@@ -514,9 +514,62 @@ nZEDb sites and are throttled so you will get almost no results from those.
 
 >If you want to re-attach to screen to see what is going on, type `screen -x`
 
+>**Indexing using the Tmux scripts:**
+
+>Install tmux, tmux is similar to screen but allows to have multiple terminals visible and other features.
+>>`sudo apt-get install tmux time`
+
+>Install all the required python modules:
+>>`sudo apt-get install python-setuptools python-pip`  
+`sudo python -m easy_install pip`  
+`sudo easy_install cymysql`  
+`sudo easy_install pynntp`  
+`sudo easy_install socketpool`  
+`pip list`  
+`sudo apt-get install python3-setuptools python3-pip`  
+`sudo python3 -m easy_install pip`  
+`sudo pip3 install cymysql`  
+`sudo pip3 install pynntp`  
+`sudo pip3 install socketpool`  
+`pip3 list`
+
+>On your website, head to the admin tmux page (http://IpAddressOfYourServer/admin/tmux-edit.php)
+
+>Take your time and read through all the options attentively, I will however show the settings I used below.
+
+>Set `Tmux Scripts Running` to `yes`.
+
+>Set `Run Sequential` to `Basic Sequential`.
+
+>Set `Update Binaries` to `Simple Threaded Update`.
+
+>Set `Update Releases` to `Update Releases`.
+
+>Set `Postprocess Additional` to `All`.
+
+>Set `Postprocess Amazon` to `Yes`.
+
+>Set `Postprocess Non-Amazon` to `Properly Renamed Releases`.
+
+>Set `Decrypt Hash Based Release Names` to `All`.
+
+>Set `Update TV and Theater Schedules` to `yes`.
+
+>Click on `Save Tmux Settings` at the bottom of the page.
+
+>In your terminal window (CLI), change current working directory to the tmux directory.
+>>`cd /var/www/nZEDb/misc/update/nix/tmux/`
+
+>Start the tmux script.
+>>`php start.php`
+
+>You can now detach from tmux using this keyboard combo(press control and a, let go press d): `control+a d`
+
+>To re-attach to tmux, type `tmux attach`
+
 ---
 
->There are other automated scripts, you can open them in a text editor to see what they do.
+>There are other automated scripts, you can open them in a text editor or ask around / do research to see what they do.
 
 ### Conclusion
 
