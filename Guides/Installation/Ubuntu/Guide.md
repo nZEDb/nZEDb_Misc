@@ -590,3 +590,5 @@ nZEDb sites and are throttled so you will get almost no results from those.
 ### Conclusion
 
 >For questions, check the [FAQ](https://github.com/nZEDb/nZEDb/blob/master/docs/FAQ.txt)/[Wiki](https://github.com/nZEDb/nZEDb/wiki)/[Forum](http://forums.nzedb.com/) or join IRC, server [Synirc](https://www.synirc.net/servers) channel #nZEDb
+
+>If you do not have a IRC client, we have a web IRC client on our website [here](http://forums.nzedb.com/index.php?action=chat).
