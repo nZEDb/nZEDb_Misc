@@ -305,8 +305,9 @@ Save and exit nano.
 >Make nZEDb the default Nginx site:
 >>`sudo ln -s /etc/nginx/sites-available/nZEDb /etc/nginx/sites-enabled/nZEDb`
 
->Restart Nginx:
->>`sudo service nginx restart`
+>Restart Nginx and php5-fpm:
+>>`sudo service nginx restart`  
+`sudo service php5-fpm restart`
 
 ---
 
