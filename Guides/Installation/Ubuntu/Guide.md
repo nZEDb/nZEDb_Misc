@@ -307,7 +307,7 @@ Save and exit nano.
 
 >Restart Nginx and php5-fpm:
 >>`sudo service nginx restart`  
-`sudo service php5-fpm restart`
+`sudo service php5-fpm restart` or `sudo /etc/init.d/php5-fpm restart` if the previous does not function.
 
 ---
 
