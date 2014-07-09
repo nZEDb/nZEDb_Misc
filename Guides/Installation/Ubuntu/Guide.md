@@ -358,6 +358,11 @@ If you have installed Nginx:   `sudo nano /etc/php5/fpm/php.ini`
 
 ---
 
+>*[7zip](http://www.7-zip.org/):*
+>>`sudo apt-get install p7zip-full`
+
+---
+
 >*[Mediainfo](http://mediaarea.net/en/MediaInfo):*
 
 >Go to http://mediaarea.net/en/MediaInfo/Download/Ubuntu, download the deb files for 
