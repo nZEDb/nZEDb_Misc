@@ -3,6 +3,8 @@ IRCScraper Setup Guide
 
 ### Notes:
 
+>Importing [this](http://forums.nzedb.com/index.php?topic=1614.0) PreDB dump before starting is recommended.
+
 >ZNC is recommended, please go through the ZNC guide [here](https://github.com/nZEDb/nZEDb_Misc/tree/master/Guides/Various/ZNC/Guide.md) first.
 
 ### Step 1 *Copying the settings file:*
