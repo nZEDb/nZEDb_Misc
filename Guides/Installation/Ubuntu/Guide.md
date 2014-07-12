@@ -232,6 +232,8 @@ they require a different configuration.
 >>`sudo nano /etc/nginx/sites-available/nZEDb`
 
 >Paste the following into the file, change the settings as needed:  
+The server_name must be changed if you want to use a different hostname than localhost.  
+  Example: "server_name localhost 192.168.1.29 mydomain.com;" would work on all those 3.  
 The fastcgi_pass can be changed to TCP by uncommenting it, sockets are faster however.
 
     server {
