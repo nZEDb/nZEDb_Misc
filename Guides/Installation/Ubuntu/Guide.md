@@ -396,7 +396,7 @@ https://github.com/jonnyboy/installers/blob/master/compile_ffmpeg.sh
 ---
 
 >*[Memcached](http://memcached.org/)*  
->>`sudo apt-get install memcached php5-memcache`
+>>`sudo apt-get install memcached php5-memcached`
 
 >After git cloning and seting up the indexer, edit www/config.php, change MEMCACHE_ENABLED to true.
 
