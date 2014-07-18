@@ -56,7 +56,8 @@ You can read more on Apparmor [here](http://en.wikipedia.org/wiki/AppArmor).
 ---
 
 >Option 1: Disabling Apparmor
->>`sudo update-rc.d apparmor disable`
+>>`sudo apt-get purge apparmor`  
+`sudo update-rc.d apparmor disable`
 
 
 ---
