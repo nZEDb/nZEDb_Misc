@@ -329,8 +329,6 @@ Save and exit nano.
 >>`date.timezone = YourLocalTimezone`
 
 >Enable error logging (Needed when reporting bugs)
->>`display_errors = On`
-
 >>`error_reporting = E_ALL`
 
 >>`log_errors = On`
