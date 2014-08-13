@@ -4,10 +4,10 @@ Ubuntu Web Guide.
 
 ### Notes:
 >In this guide you will see commands within grey rectangles, example:
-`this is an example`  
+`this is an example`
 When you see these, you must type them into a command line interface (terminal window).
 
-> PHP 5.4 and MySQL 5.5 are the minimum required versions, 
+> PHP 5.4 and MySQL 5.5 are the minimum required versions,
 but higher versions (PHP 5.5 and MySQL 5.6 to be exact) are recommended.
 
 ### Step 1 *Updating your operating system:*
@@ -30,41 +30,41 @@ but higher versions (PHP 5.5 and MySQL 5.6 to be exact) are recommended.
 >>`sudo reboot`
 
 ### Step 2 *Installing pre-requisite software:*
->These programs will be used later on to install additional software.  
-They might already be installed on your operating system.  
->>`sudo apt-get install software-properties-common`  
+>These programs will be used later on to install additional software.
+They might already be installed on your operating system.
+>>`sudo apt-get install software-properties-common`
 `sudo apt-get install python-software-properties`
 
 ### Step 3 **[Optional]** *Adding a repository for the newest PHP and Apache:*
->This will give you the latest PHP and Apache, PHP 5.5 is highly recomended, 
+>This will give you the latest PHP and Apache, PHP 5.5 is highly recomended,
 if you operating system does not have PHP 5.5, please add this repository.
->>`sudo add-apt-repository ppa:ondrej/php5`  
+>>`sudo add-apt-repository ppa:ondrej/php5`
 `sudo apt-get update`
 
 ### Step 4 *Installing PHP and the required extensions:*
-> Note that some extensions might be missing here, 
-see INSTALL.txt in the nZEDb docs folder for all the required extensions.  
+> Note that some extensions might be missing here,
+see INSTALL.txt in the nZEDb docs folder for all the required extensions.
 >>`sudo apt-get install php5 php5-dev php5-json php-pear php5-gd php5-mysqlnd php5-curl`
 
 ### Step 5 **[Mandatory]** *Apparmor:*
->Apparmor restricts certain programs, on nZEDb it stops us from using the 
-MySQL LOAD DATA commands. 
+>Apparmor restricts certain programs, on nZEDb it stops us from using the
+MySQL LOAD DATA commands.
 You can read more on Apparmor [here](http://en.wikipedia.org/wiki/AppArmor).
 
->*You have two options*:  
+>*You have two options*:
 
 ---
 
 >Option 1: Disabling Apparmor
->>`sudo apt-get purge apparmor`  
+>>`sudo apt-get purge apparmor`
 `sudo update-rc.d apparmor disable`
 
 
 ---
 
 >Option 2: Making Apparmor ignore MySQL
->>`sudo apt-get install apparmor-utils`  
-`sudo aa-complain /usr/sbin/mysqld`  
+>>`sudo apt-get install apparmor-utils`
+`sudo aa-complain /usr/sbin/mysqld`
 
 >If this does not work, try [this tutorial](http://www.cyberciti.biz/faq/ubuntu-linux-howto-disable-apparmor-commands/).
 
@@ -76,7 +76,7 @@ You can read more on Apparmor [here](http://en.wikipedia.org/wiki/AppArmor).
 ### Step 6 *Installing a MySQL server and client:*
 >You have multiple choices when it comes to a MySQL server and client,
 you will need to do some research to figure out which is the best for you.
-We recommend MariaDB for most people.  
+We recommend MariaDB for most people.
 Only install one of the following three to avoid issues.
 
 >[MySQL](http://dev.mysql.com/doc/refman/5.6/en/features.html):
@@ -89,24 +89,24 @@ Only install one of the following three to avoid issues.
 
 ---
 
->[Percona](http://www.percona.com/software/percona-server/feature-comparison):  
+>[Percona](http://www.percona.com/software/percona-server/feature-comparison):
 
 >Add the repo key:
->>`sudo apt-key adv --keyserver keys.gnupg.net --recv-keys 1C4CBDCDCD2EFD2A`  
+>>`sudo apt-key adv --keyserver keys.gnupg.net --recv-keys 1C4CBDCDCD2EFD2A`
 
->Create a text file to put in the repo source:  
+>Create a text file to put in the repo source:
 >>`sudo nano /etc/apt/sources.list.d/percona.list`
 
 >Paste the deb and deb-src lines, replacing VERSION with the name of your ubuntu: (12.04: precise,
 12.10: quantal, 13.04: raring, 13.10: saucy, 14.04: trusty, 14.10: utopic).
 
->>`deb http://repo.percona.com/apt VERSION main`  
+>>`deb http://repo.percona.com/apt VERSION main`
 `deb-src http://repo.percona.com/apt VERSION main`
 
 >Exit and save nano (press control+x, then type y and press Enter).
 
 >Update your packages and install percona.
->>`sudo apt-get update`  
+>>`sudo apt-get update`
 `sudo apt-get install percona-server-server-5.5 percona-server-client-5.5 libmysqlclient-dev`
 
 ### Step 7 *Configuring MySQL:*
@@ -114,7 +114,7 @@ Only install one of the following three to avoid issues.
 >>`sudo nano /etc/my.cnf`
 
 >Add (or change them if they already exist) the following:
->>`max_allowed_packet = 16M`  
+>>`max_allowed_packet = 16M`
 `group_concat_max_len = 8192`
 
 >Consider raising the key_buffer_size to 256M to start, later on you can raise this more as your database grows.
@@ -126,29 +126,29 @@ Only install one of the following three to avoid issues.
 >Log in to MySQL:
 >>`sudo mysql -p`
 
->In the following command line, change YourMySQLUsername for the username 
-you will use to connect to MySQL in nZEDb (root for example).  
-Also change the YourMySQLServerHostName to the hostname of the server.  
-If your MySQL server is local, use localhost. If remote, try the domain name or IP address.  
-It has been reported 127.0.0.1 does not work for the hostname.  
-Do not remove the quotes between the name and hostname.  
+>In the following command line, change YourMySQLUsername for the username
+you will use to connect to MySQL in nZEDb (root for example).
+Also change the YourMySQLServerHostName to the hostname of the server.
+If your MySQL server is local, use localhost. If remote, try the domain name or IP address.
+It has been reported 127.0.0.1 does not work for the hostname.
+Do not remove the quotes between the name and hostname.
 >>`GRANT FILE ON *.* TO 'YourMySQLUsername'@'YourMySQLServerHostName';`
 
 >Exit MySQL:
 >>`\q`
 
 ### Step 8 *Installing and configuring a web server:*
->You have many options. We will however show you 2 options, Apache2 or Nginx.  
+>You have many options. We will however show you 2 options, Apache2 or Nginx.
 Only install Apache2 or Nginx, do not install both to avoid issues.
 
->*[Apache](http://httpd.apache.org/):*  
+>*[Apache](http://httpd.apache.org/):*
 >>`sudo apt-get install apache2`
 
->Now you need to check if you have apache 2.2 or apache 2.4, 
+>Now you need to check if you have apache 2.2 or apache 2.4,
 they require a different configuration.
 >>`apache2 -v`
 
->**Apache 2.4**:  
+>**Apache 2.4**:
 >*If you have Apache 2.2, scroll down lower.*
 
 >Create a site configuration file:
@@ -181,13 +181,13 @@ they require a different configuration.
 >Save and exit nano.
 
 >Disable the default site, enable nZEDb, enable rewrite, restart apache:
->>`sudo a2dissite 00-default`  
-`sudo a2dissite 000-default`  
-`sudo a2ensite nZEDb.conf`  
-`sudo a2enmod rewrite`  
-`sudo service apache2 restart`  
+>>`sudo a2dissite 00-default`
+`sudo a2dissite 000-default`
+`sudo a2ensite nZEDb.conf`
+`sudo a2enmod rewrite`
+`sudo service apache2 restart`
 
->**Apache 2.2**  
+>**Apache 2.2**
 >*Skip this if you have apache 2.4*
 
 >Create a site configuration file:
@@ -214,14 +214,14 @@ they require a different configuration.
 >Save and exit nano.
 
 >Disable the default site, enable nZEDb, enable rewrite, restart apache:
->>`sudo a2dissite default`  
-`sudo a2ensite nZEDb`  
-`sudo a2enmod rewrite`  
+>>`sudo a2dissite default`
+`sudo a2ensite nZEDb`
+`sudo a2enmod rewrite`
 `sudo service apache2 restart`
 
 ---
 
->**Nginx:**  
+>**Nginx:**
 
 >Install Nginx:
 >>`sudo apt-get install -y nginx`
@@ -232,59 +232,59 @@ they require a different configuration.
 >Create a nginx configuration file for your nZEDb website:
 >>`sudo nano /etc/nginx/sites-available/nZEDb`
 
->Paste the following into the file, change the settings as needed:  
-The server_name must be changed if you want to use a different hostname than localhost.  
-  Example: "server_name localhost 192.168.1.29 mydomain.com;" would work on all those 3.  
+>Paste the following into the file, change the settings as needed:
+The server_name must be changed if you want to use a different hostname than localhost.
+  Example: "server_name localhost 192.168.1.29 mydomain.com;" would work on all those 3.
 The fastcgi_pass can be changed to TCP by uncommenting it, sockets are faster however.
 
     server {
         # Change these settings to match your machine.
         listen 80 default_server;
         server_name localhost;
-        
+
         # These are the log locations, you should not have to change these.
         access_log /var/log/nginx/access.log;
         error_log /var/log/nginx/error.log;
-        
+
         # This is the root web folder for nZEDb, you shouldn't have to change this.
         root /var/www/nZEDb/www/;
         index index.html index.htm index.php;
-        
+
         # Everything below this should not be changed unless noted.
         location ~* \.(?:ico|css|js|gif|inc|txt|gz|xml|png|jpe?g) {
             expires max;
             add_header Pragma public;
             add_header Cache-Control "public, must-revalidate, proxy-revalidate";
         }
-        
+
         location / {
             try_files $uri $uri/ @rewrites;
         }
-        
+
         location ^~ /covers/ {
             # This is where the nZEDb covers folder should be in.
             root /var/www/nZEDb/resources;
         }
-        
+
         location @rewrites {
             rewrite ^/([^/\.]+)/([^/]+)/([^/]+)/? /index.php?page=$1&id=$2&subpage=$3 last;
             rewrite ^/([^/\.]+)/([^/]+)/?$ /index.php?page=$1&id=$2 last;
             rewrite ^/([^/\.]+)/?$ /index.php?page=$1 last;
         }
-        
+
         location /admin {
         }
-        
+
         location /install {
         }
-        
+
         location ~ \.php$ {
             include /etc/nginx/fastcgi_params;
-            
+
             # Uncomment the following line and comment the .sock line if you want to use TCP.
             #fastcgi_pass 127.0.0.1:9000;
             fastcgi_pass unix:/var/run/php5-fpm.sock;
-            
+
             # The next two lines should go in your fastcgi_params
             fastcgi_index index.php;
             fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
@@ -294,12 +294,12 @@ The fastcgi_pass can be changed to TCP by uncommenting it, sockets are faster ho
 >Save and exit nano.
 
 >If you have changed the fastcgi_pass to tcp (127.0.0.1:9000), you must edit www.conf to listen on it instead of sockets:
->>`sudo nano /etc/php5/fpm/pool.d/www.conf`  
-Change `listen = /var/run/php5-fpm.sock` to `listen = 127.0.0.1:9000`  
+>>`sudo nano /etc/php5/fpm/pool.d/www.conf`
+Change `listen = /var/run/php5-fpm.sock` to `listen = 127.0.0.1:9000`
 Save and exit nano.
 
 >Create a log folder if it does not exist:
->>`sudo mkdir -p /var/log/nginx`  
+>>`sudo mkdir -p /var/log/nginx`
 `sudo chmod 755 /var/log/nginx`
 
 >Delete the default Nginx site:
@@ -309,7 +309,7 @@ Save and exit nano.
 >>`sudo ln -s /etc/nginx/sites-available/nZEDb /etc/nginx/sites-enabled/nZEDb`
 
 >Restart Nginx and php5-fpm:
->>`sudo service nginx restart`  
+>>`sudo service nginx restart`
 `sudo service php5-fpm restart` or `sudo /etc/init.d/php5-fpm restart` if the previous does not function.
 
 ---
@@ -328,15 +328,25 @@ Save and exit nano.
 >Change your timezone from a list of timezones [here](http://php.net/manual/en/timezones.php). **Remove the preceding ;**
 >>`date.timezone = YourLocalTimezone`
 
+>Enable error logging (Needed when reporting bugs)
+>>`display_errors = On`
+
+>>`error_reporting = E_ALL`
+
+>>`log_errors = On`
+
+>>`error_log = php-errors.log`
+
+
 >Close and save this file.
 
->Open the Web SAPI php.ini.  
-If you have installed Apache2: `sudo nano /etc/php5/apache2/php.ini`  
-If you have installed Nginx:   `sudo nano /etc/php5/fpm/php.ini`  
+>Open the Web SAPI php.ini.
+If you have installed Apache2: `sudo nano /etc/php5/apache2/php.ini`
+If you have installed Nginx:   `sudo nano /etc/php5/fpm/php.ini`
 >Change the settings using the same settings as the CLI SAPI.
 
 >Restart Apache2 or Nginx:
->>`sudo service apache2 restart`  
+>>`sudo service apache2 restart`
 `sudo service nginx restart`
 
 ### Step 10 *Installing extra, optional software:*
@@ -346,17 +356,17 @@ If you have installed Nginx:   `sudo nano /etc/php5/fpm/php.ini`
 >You can install Unrar from the repositories, but it's quite old (version 4):
 >> `sudo apt-get install unrar`
 
->You can also install it by downloading the newest version (recommended, as some RAR files require version 5+):  
->Go to http://www.rarlab.com/download.htm, look for the newest unrar version (currently RAR 5.10), right click it and copy the link.  
+>You can also install it by downloading the newest version (recommended, as some RAR files require version 5+):
+>Go to http://www.rarlab.com/download.htm, look for the newest unrar version (currently RAR 5.10), right click it and copy the link.
 >Replace the link below with the one you copied:
->>`mkdir -p ~/new_unrar`  
-`cd ~/new_unrar`  
-`wget http://www.rarlab.com/rar/rarlinux-x64-5.1.0.tar.gz`  
-`tar -xzf rarlinux*.tar.gz`  
-`sudo mv /usr/bin/unrar /usr/bin/unrar4`  
-`sudo mv rar/unrar /usr/bin/unrar`  
-`sudo chmod 755 /usr/bin/unrar`  
-`cd ~/`  
+>>`mkdir -p ~/new_unrar`
+`cd ~/new_unrar`
+`wget http://www.rarlab.com/rar/rarlinux-x64-5.1.0.tar.gz`
+`tar -xzf rarlinux*.tar.gz`
+`sudo mv /usr/bin/unrar /usr/bin/unrar4`
+`sudo mv rar/unrar /usr/bin/unrar`
+`sudo chmod 755 /usr/bin/unrar`
+`cd ~/`
 `rm -rf ~/new_unrar`
 
 ---
@@ -368,7 +378,7 @@ If you have installed Nginx:   `sudo nano /etc/php5/fpm/php.ini`
 
 >*[Mediainfo](http://mediaarea.net/en/MediaInfo):*
 
->Go to http://mediaarea.net/en/MediaInfo/Download/Ubuntu, download the deb files for 
+>Go to http://mediaarea.net/en/MediaInfo/Download/Ubuntu, download the deb files for
 libmediainfo, libzen0 and mediainfo (CLI)
 
 >You can download by right clicking on them, copy link, then type `wget` and paste the link after.
@@ -377,7 +387,7 @@ libmediainfo, libzen0 and mediainfo (CLI)
 
 ---
 
->*[Lame](http://lame.sourceforge.net/):*  
+>*[Lame](http://lame.sourceforge.net/):*
 >>`sudo apt-get install lame`
 
 ---
@@ -388,15 +398,15 @@ libmediainfo, libzen0 and mediainfo (CLI)
 >>`sudo apt-get install libav-tools`
 
 >You can alternatively install ffmpeg:
->>(manual compilation)  
+>>(manual compilation)
 https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu
 
->>(automated compilation, possibly unmaintained)  
+>>(automated compilation, possibly unmaintained)
 https://github.com/jonnyboy/installers/blob/master/compile_ffmpeg.sh
 
 ---
 
->*[Memcached](http://memcached.org/)*  
+>*[Memcached](http://memcached.org/)*
 >>`sudo apt-get install memcached php5-memcached`
 
 >After git cloning and seting up the indexer, edit www/config.php, change MEMCACHE_ENABLED to true.
@@ -407,41 +417,41 @@ https://github.com/jonnyboy/installers/blob/master/compile_ffmpeg.sh
 
 >You have 3 choices:
 
->simple_php_yenc_decode is a PHP extension written in C++ which offers the best performance of the 3 options. 
+>simple_php_yenc_decode is a PHP extension written in C++ which offers the best performance of the 3 options.
 This is highly recommended as there is a massive performance boost over the PHP way. This is quite easy to install so it is worth it.
 
->yydecode is an application written in C, it decodes yEnc files, it offers moderate performance. 
-The results vary in terms of performance, this requires disk I/O since the yEnc data has to be written 
+>yydecode is an application written in C, it decodes yEnc files, it offers moderate performance.
+The results vary in terms of performance, this requires disk I/O since the yEnc data has to be written
 to the disk. Mounting the folder to RAM (tmpfs) improves I/O but is still slower than simple_php_yenc_decode.
 
->Alternatively, nZEDb has a PHP method which decodes yEnc but has very poor performance, this is good if you can't get 
+>Alternatively, nZEDb has a PHP method which decodes yEnc but has very poor performance, this is good if you can't get
 simple_php_yenc_decode or yydecode installed.
 
 >You can change between any of the three at any time in site-edit part of the site if you have issues or want to test performance.
 
 >*[simple_php_yenc_decode](https://github.com/kevinlekiller/simple_php_yenc_decode):*
 
->>`sudo apt-get install git`  
-`cd ~/`  
-`git clone https://github.com/kevinlekiller/simple_php_yenc_decode`  
-`cd simple_php_yenc_decode/`  
-`sh ubuntu.sh`  
-`cd ~/`  
+>>`sudo apt-get install git`
+`cd ~/`
+`git clone https://github.com/kevinlekiller/simple_php_yenc_decode`
+`cd simple_php_yenc_decode/`
+`sh ubuntu.sh`
+`cd ~/`
 `rm -rf simple_php_yenc_decode/`
 
 >*[yydecode](http://yydecode.sourceforge.net/):*
 
->>`cd ~/`  
-`mkdir -p yydecode`  
-`cd yydecode/`  
-`wget http://colocrossing.dl.sourceforge.net/project/yydecode/yydecode/0.2.10/yydecode-0.2.10.tar.gz`  
-`tar -xzf yydecode-0.2.10.tar.gz`  
-`cd yydecode-0.2.10/`  
-`./configure`  
-`make`  
-`sudo make install`  
-`make clean`  
-`cd ~/`  
+>>`cd ~/`
+`mkdir -p yydecode`
+`cd yydecode/`
+`wget http://colocrossing.dl.sourceforge.net/project/yydecode/yydecode/0.2.10/yydecode-0.2.10.tar.gz`
+`tar -xzf yydecode-0.2.10.tar.gz`
+`cd yydecode-0.2.10/`
+`./configure`
+`make`
+`sudo make install`
+`make clean`
+`cd ~/`
 `rm -rf yydecode/`
 
 ---
@@ -452,8 +462,8 @@ simple_php_yenc_decode or yydecode installed.
 >>`sudo apt-get install git`
 
 >Clone the git:
->>`mkdir -p /var/www/`  
-`cd /var/www/`  
+>>`mkdir -p /var/www/`
+`cd /var/www/`
 `sudo git clone https://github.com/nZEDb/nZEDb.git`
 
 >Set the permissions:
@@ -461,24 +471,24 @@ simple_php_yenc_decode or yydecode installed.
 >During the install (next step of this guide) you should set perms to 777 to make things easier, otherwise you might fail on step 2 of the web install:
 >>`sudo chmod -R 777 /var/www/nZEDb`
 
->After installation you can properly set your permissions.  
-YourUnixUserName is the user you use in CLI.  
-You can find this by typing : `echo $USER`  
->>`sudo chown -R YourUnixUserName:www-data /var/www/nZEDb`  
-`sudo usermod -a -G www-data YourUnixUserName`  
+>After installation you can properly set your permissions.
+YourUnixUserName is the user you use in CLI.
+You can find this by typing : `echo $USER`
+>>`sudo chown -R YourUnixUserName:www-data /var/www/nZEDb`
+`sudo usermod -a -G www-data YourUnixUserName`
 `sudo chmod -R 774 /var/www/nZEDb`
 
 ### Step 12 *Setting up nZEDb:*
 
->Open up an internet browser, 
-head to `http://IpAddressOfYourServer/install` 
+>Open up an internet browser,
+head to `http://IpAddressOfYourServer/install`
 changing IpAddressOfYourServer for the IP of your server.
 
->Next, head to the edit site section, 
+>Next, head to the edit site section,
 turn on header compression if your server supports it,
 put in paths to optional software, like unrar/ffmpeg/etc..
 
->To figure out the path to the optional software, type `which` followed by the name of the program.  
+>To figure out the path to the optional software, type `which` followed by the name of the program.
 Example: `which unrar`
 
 >Signing up to all the API services(Amazon/Trakt/Rotten tomatoes/etc) is recommended, the keys we offer are used by many
@@ -486,9 +496,9 @@ nZEDb sites and are throttled so you will get almost no results from those.
 
 ### Step 13 *Indexing:*
 
-##### Manual indexing:  
+##### Manual indexing:
 
->Head to the "view groups" admin section of the site. (http://IpAddressOfYourServer/admin/group-list.php)  
+>Head to the "view groups" admin section of the site. (http://IpAddressOfYourServer/admin/group-list.php)
 
 >Turn on a group or two (alt.binaries.teevee is recommended).
 
@@ -503,7 +513,7 @@ nZEDb sites and are throttled so you will get almost no results from those.
 
 ---
 
-##### Automatic indexing:  
+##### Automatic indexing:
 
 >**Indexing using the screen sequential scripts:**
 
@@ -529,17 +539,17 @@ nZEDb sites and are throttled so you will get almost no results from those.
 >>`sudo apt-get install tmux time`
 
 >Install all the required python modules:
->>`sudo apt-get install python-setuptools python-pip`  
-`sudo python -m easy_install pip`  
-`sudo easy_install cymysql`  
-`sudo easy_install pynntp`  
-`sudo easy_install socketpool`  
-`pip list`  
-`sudo apt-get install python3-setuptools python3-pip`  
-`sudo python3 -m easy_install pip`  
-`sudo pip3 install cymysql`  
-`sudo pip3 install pynntp`  
-`sudo pip3 install socketpool`  
+>>`sudo apt-get install python-setuptools python-pip`
+`sudo python -m easy_install pip`
+`sudo easy_install cymysql`
+`sudo easy_install pynntp`
+`sudo easy_install socketpool`
+`pip list`
+`sudo apt-get install python3-setuptools python3-pip`
+`sudo python3 -m easy_install pip`
+`sudo pip3 install cymysql`
+`sudo pip3 install pynntp`
+`sudo pip3 install socketpool`
 `pip3 list`
 
 >On your website, head to the admin tmux page (http://IpAddressOfYourServer/admin/tmux-edit.php)
