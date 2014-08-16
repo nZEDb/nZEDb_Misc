@@ -64,7 +64,7 @@ You can read more on Apparmor [here](http://en.wikipedia.org/wiki/AppArmor).
 >Option 2: Making Apparmor ignore MySQL
 >>`sudo apt-get install apparmor-utils`
 
-`sudo aa-complain /usr/sbin/mysqld`
+>>`sudo aa-complain /usr/sbin/mysqld`
 
 >If this does not work, try [this tutorial](http://www.cyberciti.biz/faq/ubuntu-linux-howto-disable-apparmor-commands/).
 
@@ -101,13 +101,15 @@ Only install one of the following three to avoid issues.
 12.10: quantal, 13.04: raring, 13.10: saucy, 14.04: trusty, 14.10: utopic).
 
 >>`deb http://repo.percona.com/apt VERSION main`
-`deb-src http://repo.percona.com/apt VERSION main`
+
+>>`deb-src http://repo.percona.com/apt VERSION main`
 
 >Exit and save nano (press control+x, then type y and press Enter).
 
 >Update your packages and install percona.
 >>`sudo apt-get update`
-`sudo apt-get install percona-server-server-5.5 percona-server-client-5.5 libmysqlclient-dev`
+
+>>`sudo apt-get install percona-server-server-5.5 percona-server-client-5.5 libmysqlclient-dev`
 
 ### Step 7 *Configuring MySQL:*
 >Edit my.cnf (the location can vary, type `mysqld -v --help | grep -A 1 'Default options'` to find all the possible locations):
@@ -115,7 +117,8 @@ Only install one of the following three to avoid issues.
 
 >Add (or change them if they already exist) the following:
 >>`max_allowed_packet = 16M`
-`group_concat_max_len = 8192`
+
+>>`group_concat_max_len = 8192`
 
 >Consider raising the key_buffer_size to 256M to start, later on you can raise this more as your database grows.
 
@@ -182,10 +185,14 @@ they require a different configuration.
 
 >Disable the default site, enable nZEDb, enable rewrite, restart apache:
 >>`sudo a2dissite 00-default`
-`sudo a2dissite 000-default`
-`sudo a2ensite nZEDb.conf`
-`sudo a2enmod rewrite`
-`sudo service apache2 restart`
+
+>>`sudo a2dissite 000-default`
+
+>>`sudo a2ensite nZEDb.conf`
+
+>>`sudo a2enmod rewrite`
+
+>>`sudo service apache2 restart`
 
 >**Apache 2.2**
 >*Skip this if you have apache 2.4*
@@ -215,9 +222,12 @@ they require a different configuration.
 
 >Disable the default site, enable nZEDb, enable rewrite, restart apache:
 >>`sudo a2dissite default`
-`sudo a2ensite nZEDb`
-`sudo a2enmod rewrite`
-`sudo service apache2 restart`
+
+>>`sudo a2ensite nZEDb`
+
+>>`sudo a2enmod rewrite`
+
+>>`sudo service apache2 restart`
 
 ---
 
@@ -300,7 +310,8 @@ Save and exit nano.
 
 >Create a log folder if it does not exist:
 >>`sudo mkdir -p /var/log/nginx`
-`sudo chmod 755 /var/log/nginx`
+
+>>`sudo chmod 755 /var/log/nginx`
 
 >Delete the default Nginx site:
 >>`sudo unlink /etc/nginx/sites-enabled/default`
@@ -310,7 +321,8 @@ Save and exit nano.
 
 >Restart Nginx and php5-fpm:
 >>`sudo service nginx restart`
-`sudo service php5-fpm restart` or `sudo /etc/init.d/php5-fpm restart` if the previous does not function.
+
+>>`sudo service php5-fpm restart` or `sudo /etc/init.d/php5-fpm restart` if the previous does not function.
 
 ---
 
@@ -345,7 +357,8 @@ If you have installed Nginx:   `sudo nano /etc/php5/fpm/php.ini`
 
 >Restart Apache2 or Nginx:
 >>`sudo service apache2 restart`
-`sudo service nginx restart`
+
+>>`sudo service nginx restart`
 
 ### Step 10 *Installing extra, optional software:*
 
@@ -358,14 +371,22 @@ If you have installed Nginx:   `sudo nano /etc/php5/fpm/php.ini`
 >Go to http://www.rarlab.com/download.htm, look for the newest unrar version (currently RAR 5.10), right click it and copy the link.
 >Replace the link below with the one you copied:
 >>`mkdir -p ~/new_unrar`
-`cd ~/new_unrar`
-`wget http://www.rarlab.com/rar/rarlinux-x64-5.1.0.tar.gz`
-`tar -xzf rarlinux*.tar.gz`
-`sudo mv /usr/bin/unrar /usr/bin/unrar4`
-`sudo mv rar/unrar /usr/bin/unrar`
-`sudo chmod 755 /usr/bin/unrar`
-`cd ~/`
-`rm -rf ~/new_unrar`
+
+>>`cd ~/new_unrar`
+
+>>`wget http://www.rarlab.com/rar/rarlinux-x64-5.1.0.tar.gz`
+
+>>`tar -xzf rarlinux*.tar.gz`
+
+>>`sudo mv /usr/bin/unrar /usr/bin/unrar4`
+
+>>`sudo mv rar/unrar /usr/bin/unrar`
+
+>>`sudo chmod 755 /usr/bin/unrar`
+
+>>`cd ~/`
+
+>>`rm -rf ~/new_unrar`
 
 ---
 
@@ -429,40 +450,54 @@ simple_php_yenc_decode or yydecode installed.
 
 >*[simple_php_yenc_decode](https://github.com/kevinlekiller/simple_php_yenc_decode):*
 
->>`sudo apt-get install git`
-`cd ~/`
-`git clone https://github.com/kevinlekiller/simple_php_yenc_decode`
-`cd simple_php_yenc_decode/`
-`sh ubuntu.sh`
-`cd ~/`
-`rm -rf simple_php_yenc_decode/`
+>>`cd ~/`
+
+>>`git clone https://github.com/kevinlekiller/simple_php_yenc_decode`
+
+>>`cd simple_php_yenc_decode/`
+
+>>`sh ubuntu.sh`
+
+>>`cd ~/`
+
+>>`rm -rf simple_php_yenc_decode/`
 
 >*[yydecode](http://yydecode.sourceforge.net/):*
 
 >>`cd ~/`
-`mkdir -p yydecode`
-`cd yydecode/`
-`wget http://colocrossing.dl.sourceforge.net/project/yydecode/yydecode/0.2.10/yydecode-0.2.10.tar.gz`
-`tar -xzf yydecode-0.2.10.tar.gz`
-`cd yydecode-0.2.10/`
-`./configure`
-`make`
-`sudo make install`
-`make clean`
-`cd ~/`
-`rm -rf yydecode/`
+
+>>`mkdir -p yydecode`
+
+>>`cd yydecode/`
+
+>>`wget http://colocrossing.dl.sourceforge.net/project/yydecode/yydecode/0.2.10/yydecode-0.2.10.tar.gz`
+
+>>`tar -xzf yydecode-0.2.10.tar.gz`
+
+>>`cd yydecode-0.2.10/`
+
+>>`./configure`
+
+>>`make`
+
+>>`sudo make install`
+
+>>`make clean`
+
+>>`cd ~/`
+
+>>`rm -rf yydecode/`
 
 ---
 
 ### Step 11 *Acquiring nZEDb:*
 
->Install git:
->>`sudo apt-get install git`
-
->Clone the git:
+>Clone the git repository:
 >>`mkdir -p /var/www/`
-`cd /var/www/`
-`sudo git clone https://github.com/nZEDb/nZEDb.git`
+
+>>`cd /var/www/`
+
+>>`sudo git clone https://github.com/nZEDb/nZEDb.git`
 
 >Set the permissions:
 
@@ -473,8 +508,10 @@ simple_php_yenc_decode or yydecode installed.
 YourUnixUserName is the user you use in CLI.
 You can find this by typing : `echo $USER`
 >>`sudo chown -R YourUnixUserName:www-data /var/www/nZEDb`
-`sudo usermod -a -G www-data YourUnixUserName`
-`sudo chmod -R 774 /var/www/nZEDb`
+
+>>`sudo usermod -a -G www-data YourUnixUserName`
+
+>>`sudo chmod -R 774 /var/www/nZEDb`
 
 ### Step 12 *Setting up nZEDb:*
 
@@ -538,17 +575,28 @@ nZEDb sites and are throttled so you will get almost no results from those.
 
 >Install all the required python modules:
 >>`sudo apt-get install python-setuptools python-pip`
-`sudo python -m easy_install pip`
-`sudo easy_install cymysql`
-`sudo easy_install pynntp`
-`sudo easy_install socketpool`
-`pip list`
-`sudo apt-get install python3-setuptools python3-pip`
-`sudo python3 -m easy_install pip`
-`sudo pip3 install cymysql`
-`sudo pip3 install pynntp`
-`sudo pip3 install socketpool`
-`pip3 list`
+
+>>`sudo python -m easy_install pip`
+
+>>`sudo easy_install cymysql`
+
+>>`sudo easy_install pynntp`
+
+>>`sudo easy_install socketpool`
+
+>>`pip list`
+
+>>`sudo apt-get install python3-setuptools python3-pip`
+
+>>`sudo python3 -m easy_install pip`
+
+>>`sudo pip3 install cymysql`
+
+>>`sudo pip3 install pynntp`
+
+>>`sudo pip3 install socketpool`
+
+>>`pip3 list`
 
 >On your website, head to the admin tmux page (http://IpAddressOfYourServer/admin/tmux-edit.php)
 
