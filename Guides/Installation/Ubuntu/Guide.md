@@ -403,6 +403,8 @@ libmediainfo, libzen0 and mediainfo (CLI)
 >You can download by right clicking on them, copy link, then type `wget` and paste the link after.
 
 >Once you have all 3 deb files, install them by typing `sudo dpkg -i` followed by the name of the file.
+>You may have to install libzen0 package first. If so do:
+>>`sudo apt-get install libzen0`
 
 ---
 
