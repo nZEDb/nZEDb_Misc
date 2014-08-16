@@ -42,7 +42,7 @@ if you operating system does not have PHP 5.5, please add this repository.
 ### Step 4 *Installing PHP and the required extensions:*
 > Note that some extensions might be missing here,
 see INSTALL.txt in the nZEDb docs folder for all the required extensions.
->>`sudo apt-get install php5 php5-dev php5-json php-pear php5-gd php5-mysqlnd php5-curl`
+>>`sudo apt-get install php5 php5-cli php5-dev php5-json php-pear php5-gd php5-mysqlnd php5-curl`
 
 ### Step 5 **[Mandatory]** *Apparmor:*
 >Apparmor restricts certain programs, on nZEDb it stops us from using the
@@ -55,13 +55,15 @@ You can read more on Apparmor [here](http://en.wikipedia.org/wiki/AppArmor).
 
 >Option 1: Disabling Apparmor
 >>`sudo apt-get purge apparmor`
-`sudo update-rc.d apparmor disable`
+
+>>`sudo update-rc.d apparmor disable`
 
 
 ---
 
 >Option 2: Making Apparmor ignore MySQL
 >>`sudo apt-get install apparmor-utils`
+
 `sudo aa-complain /usr/sbin/mysqld`
 
 >If this does not work, try [this tutorial](http://www.cyberciti.biz/faq/ubuntu-linux-howto-disable-apparmor-commands/).
