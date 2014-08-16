@@ -325,6 +325,11 @@ Save and exit nano.
 >>`sudo service php5-fpm restart` or `sudo /etc/init.d/php5-fpm restart` if the previous does not function.
 
 ---
+### Step 8.1 *Add your user to the www-data group*
+>Regardless of which web server you use, you should add your user to the www-data group so that you may create/edit files belonging to the group.
+>>`sudo usermod -a -G www-data YourUnixUserName`
+>This requires you to log back in before it takes effect. Do so now or before the Aquiring nZEDb step.
+
 
 ### Step 9 *Configuring PHP:*
 
@@ -494,26 +499,35 @@ simple_php_yenc_decode or yydecode installed.
 
 ### Step 11 *Acquiring nZEDb:*
 
->Clone the git repository:
->>`mkdir -p /var/www/`
+>Switch your active group to the www-data one. This makes any files created under your user add them to that group instead of your normal primary group.
+>>`newgrp www-data`
 
+>Switch to system's www location.
 >>`cd /var/www/`
 
->>`sudo git clone https://github.com/nZEDb/nZEDb.git`
+>This folder should have been created when apache2 was installed (by php5 dependencies). If ,for whatever reason, it did not do:
+>>`mkdir -p /var/www`
+
+>>`sudo chown www-data:www-data /var/www`
+
+>>`sudo chmod 775 /var/www`
+
+>Clone the git repository:
+>>`git clone https://github.com/nZEDb/nZEDb.git`
 
 >Set the permissions:
 
 >During the install (next step of this guide) you should set perms to 777 to make things easier, otherwise you might fail on step 2 of the web install:
->>`sudo chmod -R 777 /var/www/nZEDb`
+>>`chmod -R 777 /var/www/nZEDb/resources`
+
+>>`chmod -R 777 /var/www/nZEDb/www`
 
 >After installation you can properly set your permissions.
 YourUnixUserName is the user you use in CLI.
 You can find this by typing : `echo $USER`
 >>`sudo chown -R YourUnixUserName:www-data /var/www/nZEDb`
 
->>`sudo usermod -a -G www-data YourUnixUserName`
-
->>`sudo chmod -R 774 /var/www/nZEDb`
+>>`sudo chmod -R 775 /var/www/nZEDb`
 
 ### Step 12 *Setting up nZEDb:*
 
