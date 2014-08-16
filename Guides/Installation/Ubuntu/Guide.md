@@ -24,9 +24,7 @@ but higher versions (PHP 5.5 and MySQL 5.6 to be exact) are recommended.
 >**Optional:** Upgrade some other stuff (like the kernel).
 >>`sudo apt-get dist-upgrade`
 
----
-
->You must now reboot your server.
+>>You must now reboot your server.
 >>`sudo reboot`
 
 ### Step 2 *Installing pre-requisite software:*
