@@ -525,9 +525,10 @@ simple_php_yenc_decode or yydecode installed.
 ### Step 12 *Setting up nZEDb:*
 
 >Open up an internet browser, head to `http://IpAddressOfYourServer/install` changing IpAddressOfYourServer for the IP of your server.
->If this only shows you the web servers default page, you probably need to use a domain name of some kind.
+>>If this only shows you the web servers default page, you probably need to use a domain name of some kind.
 >>Open your local hosts file (on the computer which you are trying to browse from) and add an entry for the target server.
 >>>`sudo nano /etc/hosts`
+
 >>>`IpAddressOfYourServer   <server_name_used_in_configuration>`
 
 >Next, head to the edit site section,
