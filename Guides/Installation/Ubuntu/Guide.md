@@ -499,18 +499,18 @@ simple_php_yenc_decode or yydecode installed.
 
 ### Step 11 *Acquiring nZEDb:*
 
->Switch your active group to the www-data one. This makes any files created under your user add them to that group instead of your normal primary group.
+>Switch your active group to 'www-data'.
 >>`newgrp www-data`
 
->Switch to system's www location.
+>Switch to the system's www location.
 >>`cd /var/www/`
 
->This folder should have been created when apache2 was installed (by php5 dependencies). If ,for whatever reason, it did not do:
->>`mkdir -p /var/www`
+>>This folder should have been created when apache2 was installed (by php5 dependencies). If, for whatever reason, it did not do:
+>>>`mkdir -p /var/www`
 
->>`sudo chown www-data:www-data /var/www`
+>>>`sudo chown www-data:www-data /var/www`
 
->>`sudo chmod 775 /var/www`
+>>>`sudo chmod 775 /var/www`
 
 >Clone the git repository:
 >>`git clone https://github.com/nZEDb/nZEDb.git`
