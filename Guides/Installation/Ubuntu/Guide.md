@@ -522,13 +522,6 @@ simple_php_yenc_decode or yydecode installed.
 
 >>`chmod -R 777 /var/www/nZEDb/www`
 
->After installation you can properly set your permissions.
-YourUnixUserName is the user you use in CLI.
-You can find this by typing : `echo $USER`
->>`sudo chown -R YourUnixUserName:www-data /var/www/nZEDb`
-
->>`sudo chmod -R 775 /var/www/nZEDb`
-
 ### Step 12 *Setting up nZEDb:*
 
 >Open up an internet browser,
