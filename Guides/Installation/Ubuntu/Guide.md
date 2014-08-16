@@ -32,13 +32,13 @@ but higher versions (PHP 5.5 and MySQL 5.6 to be exact) are recommended.
 ### Step 2 *Installing pre-requisite software:*
 >These programs will be used later on to install additional software.
 They might already be installed on your operating system.
->>`sudo apt-get install software-properties-common`
-`sudo apt-get install python-software-properties`
+>>`sudo apt-get install software-properties-common python-software-properties git`
 
 ### Step 3 **[Optional]** *Adding a repository for the newest PHP and Apache:*
 >This will give you the latest PHP and Apache, PHP 5.5 is highly recomended,
 if you operating system does not have PHP 5.5, please add this repository.
 >>`sudo add-apt-repository ppa:ondrej/php5`
+
 `sudo apt-get update`
 
 ### Step 4 *Installing PHP and the required extensions:*
