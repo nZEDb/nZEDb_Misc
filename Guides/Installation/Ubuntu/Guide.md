@@ -7,8 +7,8 @@ Ubuntu Web Guide.
 `this is an example`
 When you see these, you must type them into a command line interface (terminal window).
 
-> PHP 5.4 and MySQL 5.5 are the minimum required versions,
-but higher versions (PHP 5.5 and MySQL 5.6 to be exact) are recommended.
+> PHP 5.5 and MySQL 5.5 are the minimum required versions,
+but higher versions (MySQL 5.6 to be exact) are recommended.
 
 ### Step 1 *Updating your operating system:*
 >Update all your sources:
