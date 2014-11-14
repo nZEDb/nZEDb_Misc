@@ -8,7 +8,7 @@ Ubuntu Web Guide.
 When you see these, you must type them into a command line interface (terminal window).
 
 > PHP 5.5 and MySQL 5.5 are the minimum required versions,
-but higher versions (MySQL 5.6 to be exact) are recommended.
+but higher versions (MySQL 5.6 to be exact) are recommended. For 32 bit Operating Systems, PHP 5.6+ is required (to fix a bug in a required feature).
 
 ### Step 1 *Updating your operating system:*
 >Update all your sources:
