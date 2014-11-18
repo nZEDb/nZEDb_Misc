@@ -129,7 +129,9 @@ Only install one of the following three to avoid issues.
 >Never use the root user for your scripts.
 
 >Log in to MySQL with the root user
+
 >>`sudo mysql -u root -p
+
 >>`GRANT ALL ON mydbname.* TO 'YourMySQLUsername'@'YourMySQLServerHostName' IDENTIFIED BY 'SecretCoolPassword';`
 
 >**[Mandatory]** Add file permission to your MySQL user.
