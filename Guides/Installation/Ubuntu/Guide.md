@@ -124,13 +124,20 @@ Only install one of the following three to avoid issues.
 
 ---
 
->**[Mandatory]** Add file permissions to your MySQL user.
+>**[Mandatory]** Create a MySQL user
+>Never use the root user for your scripts
+>Log in to MySQL with the root user
+>>`sudo mysql -u root -p
+>>`GRANT ALL ON mydbname.* TO 'YourMySQLUsername'@'YourMySQLServerHostName' IDENTIFIED BY 'SecretCoolPassword';`
+
+>**[Mandatory]** Add file permission to your MySQL user.
 
 >Log in to MySQL:
 >>`sudo mysql -p`
 
+>The ALL permissions doesn't actually grant them all.
 >In the following command line, change YourMySQLUsername for the username
-you will use to connect to MySQL in nZEDb (root for example).
+you will use to connect to MySQL in nZEDb.
 Also change the YourMySQLServerHostName to the hostname of the server.
 If your MySQL server is local, use localhost. If remote, try the domain name or IP address.
 It has been reported 127.0.0.1 does not work for the hostname.
