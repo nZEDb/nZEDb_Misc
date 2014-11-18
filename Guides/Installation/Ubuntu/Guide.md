@@ -132,7 +132,7 @@ Only install one of the following three to avoid issues.
 
 >>`sudo mysql -u root -p
 
->>`GRANT ALL ON mydbname.* TO 'YourMySQLUsername'@'YourMySQLServerHostName' IDENTIFIED BY 'SecretCoolPassword';`
+>>`GRANT ALL ON mydb.* TO 'YourMySQLUsername'@'YourMySQLServerHostName' IDENTIFIED BY 'CoolPassword';`
 
 >**[Mandatory]** Add file permission to your MySQL user.
 
