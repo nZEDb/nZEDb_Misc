@@ -124,8 +124,10 @@ Only install one of the following three to avoid issues.
 
 ---
 
->**[Mandatory]** Create a MySQL user
->Never use the root user for your scripts
+>**[Mandatory]** Create a MySQL user.
+
+>Never use the root user for your scripts.
+
 >Log in to MySQL with the root user
 >>`sudo mysql -u root -p
 >>`GRANT ALL ON mydbname.* TO 'YourMySQLUsername'@'YourMySQLServerHostName' IDENTIFIED BY 'SecretCoolPassword';`
