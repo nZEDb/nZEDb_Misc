@@ -247,6 +247,23 @@ they require a different configuration.
 >Install Nginx:
 >>`sudo apt-get install -y nginx`
 
+>*Optional nginx*
+Sometimes you dont get the latest  stable version for nginx more info http://nginx.org/
+
+>Show version number nginx
+>>nginx -v
+
+>ad ppa
+>>`sudo add-apt-repository ppa:nginx/stable`
+
+>Update
+>>`sudo apt-get update`
+
+>install latest nginx
+>>`sudo apt-get install -y nginx`
+
+>*end optional*
+
 >Install php fpm, which sends the PHP files to Nginx:
 >>`sudo apt-get install -y php5-fpm`
 
