@@ -247,22 +247,22 @@ they require a different configuration.
 >Install Nginx:
 >>`sudo apt-get install -y nginx`
 
->*Optional nginx*
-Sometimes you dont get the latest  stable version for nginx more info http://nginx.org/
+>**[Optional - Start]**  
+If you wish to install the newest stable version of Nginx, follow these steps.
 
->Show version number nginx
+>You can check if your current version is outdated compared to the [Nginx downloads page](http://nginx.org/en/download.html) by typing this command:
 >>nginx -v
 
->ad ppa
+>Add the Nginx PPA:
 >>`sudo add-apt-repository ppa:nginx/stable`
 
->Update
+>Update your sources:
 >>`sudo apt-get update`
 
->install latest nginx
+>Install the latest version of Nginx:
 >>`sudo apt-get install -y nginx`
 
->*end optional*
+>**[Optional - End]**
 
 >Install php fpm, which sends the PHP files to Nginx:
 >>`sudo apt-get install -y php5-fpm`
