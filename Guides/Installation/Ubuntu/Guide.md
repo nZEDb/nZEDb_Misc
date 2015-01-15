@@ -134,6 +134,8 @@ Only install one of the following three to avoid issues.
 
 >>`GRANT ALL ON mydb.* TO 'YourMySQLUsername'@'YourMySQLServerHostName' IDENTIFIED BY 'CoolPassword';`
 
+>>>Note: Change 'mydb', 'YourMySQLUsername', and 'YourMySQLServerHostName' to appropriate values for your configuration.
+
 >**[Mandatory]** Add file permission to your MySQL user.
 
 >Log in to MySQL:
