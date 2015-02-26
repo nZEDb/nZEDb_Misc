@@ -130,7 +130,7 @@ Only install one of the following three to avoid issues.
 
 >Log in to MySQL with the root user
 
->>`sudo mysql -u root -p
+>>`sudo mysql -u root -p`
 
 >>`GRANT ALL ON mydb.* TO 'YourMySQLUsername'@'YourMySQLServerHostName' IDENTIFIED BY 'CoolPassword';`
 
