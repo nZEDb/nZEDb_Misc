@@ -113,7 +113,7 @@ Only install one of the following three to avoid issues.
 
 ### Step 7 *Configuring MySQL:*
 >Edit my.cnf (the location can vary, type `mysqld -v --help | grep -A 1 'Default options'` to find all the possible locations):
->>`sudo nano /etc/my.cnf`
+>>`sudo nano /etc/mysql/my.cnf`
 
 >Add (or change them if they already exist) the following:
 >>`max_allowed_packet = 16M`
