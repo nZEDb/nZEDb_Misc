@@ -138,9 +138,6 @@ Only install one of the following three to avoid issues.
 
 >**[Mandatory]** Add file permission to your MySQL user.
 
->Log in to MySQL:
->>`sudo mysql -p`
-
 >The ALL permissions doesn't actually grant them all.
 >In the following command line, change YourMySQLUsername for the username
 you will use to connect to MySQL in nZEDb.
