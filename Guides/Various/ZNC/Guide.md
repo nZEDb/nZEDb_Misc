@@ -5,6 +5,9 @@ ZNC Linux Guide
 >Most of this guide assumes you have debian or ubuntu,  
 but will work on most linux distros if you change some commands.
 
+NOTE: ZNC 1.x+ is required. ZNC 0.x is not supported.
+See here to compile 1.x on Debian: https://shellfish.io/tutorial/1/how-to-install-znc-on-debian-7/
+
 ### Step 1 *Installation:*
 >For other distros than Ubuntu, you can follow the guides [here](http://wiki.znc.in/Installation).
 
