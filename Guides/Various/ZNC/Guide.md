@@ -6,10 +6,12 @@ ZNC Linux Guide
 but will work on most linux distros if you change some commands.
 
 NOTE: ZNC 1.x+ is required. ZNC 0.x is not supported.
-See here to compile 1.x on Debian: https://shellfish.io/tutorial/1/how-to-install-znc-on-debian-7/
 
 ### Step 1 *Installation:*
->For other distros than Ubuntu, you can follow the guides [here](http://wiki.znc.in/Installation).
+
+>See here to compile 1.x on Debian: https://shellfish.io/tutorial/1/how-to-install-znc-on-debian-7/
+
+>For other distros than Ubuntu/Debian, you can follow the guides [here](http://wiki.znc.in/Installation).
 
 >Install the required app for adding PPA's:
 >>`sudo apt-get install python-software-properties`
