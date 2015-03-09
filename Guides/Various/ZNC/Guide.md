@@ -7,7 +7,8 @@ but will work on most linux distros if you change some commands.
 
 NOTE: ZNC 1.x+ is required. ZNC 0.x is not supported.
 
-NOTE: You MUST manually accept the SSL certificates in ZNC 1.6+ See [here](http://forums.nzedb.com/index.php?topic=1471.msg11211#msg11211) and [here](http://forums.nzedb.com/index.php?topic=1471.msg11212#msg11212), this is because synirc uses self signed certificates.
+NOTE: You MUST manually accept the SSL certificates in ZNC 1.6+  
+See [here](http://forums.nzedb.com/index.php?topic=1471.msg11211#msg11211) and [here](http://forums.nzedb.com/index.php?topic=1471.msg11212#msg11212), this is because synirc uses self signed certificates.
 
 ### Step 1 *Installation:*
 
