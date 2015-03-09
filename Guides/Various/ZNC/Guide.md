@@ -6,6 +6,7 @@ ZNC Linux Guide
 but will work on most linux distros if you change some commands.
 
 NOTE: ZNC 1.x+ is required. ZNC 0.x is not supported.
+NOTE: You must manually accept the SSL certificates in ZNC 1.6. See here http://forums.nzedb.com/index.php/topic,1471.new.html#new
 
 ### Step 1 *Installation:*
 
@@ -96,7 +97,7 @@ You can use port `6664` as the ZNC listen port.
 
 >Kickrejoin: `yes`
 
->IRC Server: `contego.ny.us.synirc.net`
+>IRC Server: `irc.synirc.net`
 
 >Port: `6697`
 
