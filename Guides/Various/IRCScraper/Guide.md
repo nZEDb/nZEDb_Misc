@@ -7,7 +7,7 @@ IRCScraper Setup Guide
 
 >ZNC is recommended, please go through the ZNC guide [here](https://github.com/nZEDb/nZEDb_Misc/tree/master/Guides/Various/ZNC/Guide.md) first.
 
->May 10th 2015 -> misc/testing/IRCScraper moved to misc/IRCScraper
+>May 10th 2015 -> `misc/testing/IRCScraper/` moved to `misc/IRCScraper/`
 
 ### Step 1 *Copying the settings file:*
 >Move to the nZEDb root folder:
