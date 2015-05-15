@@ -288,7 +288,7 @@ The fastcgi_pass can be changed to TCP by uncommenting it, sockets are faster ho
         index index.html index.htm index.php;
 
         # Everything below this should not be changed unless noted.
-        location ~* \.(?:css|eot|gif|gz|ico|inc|jpe?g|js|ogg|png|svg|ttf|txt|woff|xml)$ {
+        location ~* \.(?:css|eot|gif|gz|ico|inc|jpe?g|js|ogg|oga|ogv|mp4|m4a|mp3|png|svg|ttf|txt|woff|xml)$ {
             expires max;
             add_header Pragma public;
             add_header Cache-Control "public, must-revalidate, proxy-revalidate";
