@@ -12,7 +12,7 @@ IRCScraper Setup Guide
 >>`cd /var/www/nZEDb/`
 
 >Copy settings_example.php to settings.php:
->>`cp misc/testing/IRCScraper/settings_example.php misc/IRCScraper/settings.php`
+>>`cp misc/IRCScraper/settings_example.php misc/IRCScraper/settings.php`
 
 ### Step 2 *Editing the settings file:*
 >Open the settings file with a text editor:
@@ -69,7 +69,7 @@ your terminal/ssh session and keep the scraper running:
 >You can set up a simple shell script to continuously check if the scraper is still running.
 
 >Create a empty shell script:
->>nano misc/testing/IRCScraper/run.sh
+>>nano misc/IRCScraper/run.sh
 
 >Paste the following into it:
 
