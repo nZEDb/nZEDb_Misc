@@ -7,18 +7,16 @@ IRCScraper Setup Guide
 
 >ZNC is recommended, please go through the ZNC guide [here](https://github.com/nZEDb/nZEDb_Misc/tree/master/Guides/Various/ZNC/Guide.md) first.
 
->May 10th 2015 -> `misc/testing/IRCScraper/` moved to `misc/IRCScraper/`
-
 ### Step 1 *Copying the settings file:*
 >Move to the nZEDb root folder:
 >>`cd /var/www/nZEDb/`
 
 >Copy settings_example.php to settings.php:
->>`cp misc/testing/IRCScraper/settings_example.php misc/testing/IRCScraper/settings.php`
+>>`cp misc/testing/IRCScraper/settings_example.php misc/IRCScraper/settings.php`
 
 ### Step 2 *Editing the settings file:*
 >Open the settings file with a text editor:
->>`nano misc/testing/IRCScraper/settings.php`
+>>`nano misc/IRCScraper/settings.php`
 
 >Change `$username` to the username you want.  
 ie: `$username = 'myBot';`  
@@ -54,7 +52,7 @@ your terminal/ssh session and keep the scraper running:
 >>`sudo apt-get install screen`
 
 >Run the scraper in screen:
->>`screen php misc/testing/IRCScraper/scrape.php true`
+>>`screen php misc/IRCScraper/scrape.php true`
 
 >To detach from the screen session, press the following keyboard combination:
 >>Control and A together, then let go and press D
@@ -79,7 +77,7 @@ your terminal/ssh session and keep the scraper running:
     while :
     do
         if ! screen -list | grep -q "ircscraper"; then
-                screen -dmS ircscraper /usr/bin/php /var/www/nZEDb/misc/testing/IRCScraper/scrape.php true
+                screen -dmS ircscraper /usr/bin/php /var/www/nZEDb/misc/IRCScraper/scrape.php true
         fi
         sleep 300
     done
@@ -90,14 +88,14 @@ your terminal/ssh session and keep the scraper running:
 >>`killall screen`
 
 >Make the new shell script executable:
->>`chmod +x misc/testing/IRCScraper/run.sh`
+>>`chmod +x misc/IRCScraper/run.sh`
 
 >You can add this script as a cron job or daemon(rc.d script) or manually start it:
->>`screen sh misc/testing/IRCScraper/run.sh`
+>>`screen sh misc/IRCScraper/run.sh`
 
 ### *Troubleshooting:*
 >If you have issues, try running with debugging:
->>`php misc/testing/IRCScraper/scrape.php true false true`
+>>`php misc/IRCScraper/scrape.php true false true`
 
 >Try a different server: [server list](https://www.synirc.net/servers)
 
