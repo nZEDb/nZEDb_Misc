@@ -14,6 +14,8 @@ IRCScraper Setup Guide
 >Copy settings_example.php to settings.php:
 >>`cp misc/IRCScraper/settings_example.php misc/IRCScraper/settings.php`
 
+>Edit: June 12th 2015, file moved to nzedb/config/ircscraper_settings_example.php
+
 ### Step 2 *Editing the settings file:*
 >Open the settings file with a text editor:
 >>`nano misc/IRCScraper/settings.php`
