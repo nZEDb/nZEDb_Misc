@@ -1,5 +1,7 @@
 ####Notes:
 
+>You can install all 3 cache servers listed below, but only 1 can be configured to be used in nZEDb.  
+
 >When the guide tells you to edit php.ini, on Ubuntu you must edit 2 files, one for the CLI SAPI, one for the web SAPI.  
 >On Ubuntu, the CLI php.ini is here: `/etc/php5/cli/php.ini`,  
 >the apache2 php.ini is here: `/etc/php5/apache2/php.ini`,  
@@ -9,25 +11,31 @@
 ####[Optional] Igbinary:
 >This is an alternative to PHP's built in serializer.  
 >The cache servers can be compiled or configured to use this.  
->To learn more, read the [documentation](https://github.com/igbinary/igbinary/blob/master/README.md).
+>To learn more, read the [documentation](https://github.com/igbinary/igbinary/blob/master/README.md).  
 
 >Install dependencies:
->>`sudo apt-get install php5-dev gcc make`
+>>`sudo apt-get install php5-dev gcc make`  
 
 >Download the source code:
 >>`cd ~/`  
 >>`git clone https://github.com/igbinary/igbinary.git`  
->>`cd ~/igbinary/`
+>>`cd ~/igbinary/`  
 
 >Compile:
 >>`phpize`  
 >>`./configure CFLAGS="-O2 -g" --enable-igbinary`  
 >>`make`  
 >>`make test`  
->>`sudo make install`
+>>`sudo make install`  
 
 >Add this to the "Dynamic Extensions" section of the php.ini files:
 >>`extension=igbinary.so`
+
+####Redis:
+>Download the source:
+>>`cd ~/`  
+>>`git clone https://github.com/nicolasff/phpredis.git`  
+>>`cd ~/phpredis/`  
 
 ####APCu:
 >Install it:
