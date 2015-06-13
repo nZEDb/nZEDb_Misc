@@ -44,11 +44,11 @@
 >>`phpize`
 
 >If you installed igbinary:
->>`./configure --enable-redis-igbinary`
+>>`./configure --enable-redis-igbinary`  
+>>`make && make install`
 
 >If not:
 >>`./configure`  
-
 >>`make && make install`
 
 >Add this to the "Dynamic Extensions" section of the php.ini files:
