@@ -36,10 +36,10 @@ They might already be installed on your operating system.
 >This will give you the latest PHP (it has Apache2 as a dependency and will install it, but you can remove that later if you prefer nginx or another web server), PHP 5.5 is the minimum required version,
 if you operating system does not have PHP 5.5, please add this repository.
 >>`sudo add-apt-repository ppa:ondrej/php5`
+>>`sudo apt-get update`
 
->Alternatively, you can add PHP 5.6 which is the current supported version of PHP.
+>*Alternatively*, you can add PHP 5.6 which is the current supported version of PHP.
 >>`sudo add-apt-repository ppa:ondrej/php5-5.6`
-
 >>`sudo apt-get update`
 
 ### Step 4 *Installing PHP and the required extensions:*
