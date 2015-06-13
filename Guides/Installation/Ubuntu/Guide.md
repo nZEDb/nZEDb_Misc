@@ -252,6 +252,9 @@ they require a different configuration.
 
 >**Nginx:**
 
+>(Optional) You might want to remove apache2 first:
+>>`sudo apt-get remove apache2`
+
 >Install Nginx:
 >>`sudo apt-get install -y nginx`
 
