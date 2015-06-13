@@ -124,7 +124,7 @@ Only install one of the following three to avoid issues.
 >Edit my.cnf (the location can vary, type `mysqld -v --help | grep -A 1 'Default options'` to find all the possible locations):
 >>`sudo nano /etc/mysql/my.cnf`
 
->Add (or change them if they already exist) the following:
+>Add (or change them if they already exist ; they go under the [mysqld] section) the following:
 >>`max_allowed_packet = 16M`
 
 >>`group_concat_max_len = 8192`
