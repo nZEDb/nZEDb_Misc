@@ -628,31 +628,6 @@ nZEDb sites and are throttled so you will get almost no results from those.
 >Install tmux, tmux is similar to screen but allows to have multiple terminals visible and other features.
 >>`sudo apt-get install tmux time`
 
->Install all the required python modules:
->>`sudo apt-get install python-setuptools python-pip`
-
->>`sudo python -m easy_install pip`
-
->>`sudo easy_install cymysql`
-
->>`sudo easy_install pynntp`
-
->>`sudo easy_install socketpool`
-
->>`pip list`
-
->>`sudo apt-get install python3-setuptools python3-pip`
-
->>`sudo python3 -m easy_install pip`
-
->>`sudo pip3 install cymysql`
-
->>`sudo pip3 install pynntp`
-
->>`sudo pip3 install socketpool`
-
->>`pip3 list`
-
 >On your website, head to the admin tmux page (http://IpAddressOfYourServer/admin/tmux-edit.php)
 
 >Take your time and read through all the options attentively, I will however show the settings I used below.
