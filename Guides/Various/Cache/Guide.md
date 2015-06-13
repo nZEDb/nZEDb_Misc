@@ -63,7 +63,7 @@
 >Install the PHP extension without Igbinary support:
 >>`sudo apt-get install php5-memcached`
 
->Build memcached extension from source for Igbinary support:
+>Alternatively, build memcached extension from source for Igbinary support:
 
 >Install dependencies:
 >>`sudo apt-get install wget php5-dev gcc make libmemcached-dev`
