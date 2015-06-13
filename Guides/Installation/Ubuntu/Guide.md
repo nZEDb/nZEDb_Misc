@@ -38,7 +38,7 @@ They might already be installed on your operating system.
 >To check your current PHP version, type:
 >>`php -v`
 
->>To add php 5.5, type the following commands:
+>To add php 5.5, type the following commands:
 >>`sudo add-apt-repository ppa:ondrej/php5`
 
 >>`sudo apt-get update`
