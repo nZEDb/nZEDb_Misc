@@ -72,7 +72,9 @@ Guide for installing cache servers for nZEDb.
 
 >Download the source code:
 >>`cd ~/ && wget http://pecl.php.net/get/memcached`  
->>`mkdir -p memcached_source && tar -xzvf memcached -C memcached_source/ --strip-components 1 && cd memcached_source`  
+>>`mkdir -p memcached_source && tar -xzvf memcached -C memcached_source/ --strip-components 1 && cd memcached_source`
+
+>Compile:
 >>`phpize`  
 >>`./configure --enable-memcached-igbinary`  
 >>`make`  
