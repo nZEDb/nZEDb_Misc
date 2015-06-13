@@ -28,7 +28,7 @@
 >>`make test`  
 >>`sudo make install`
 
->Add this to the "Dynamic Extensions" section of the php.ini files:
+>Add this to the "Dynamic Extensions" section of the php.ini files(**MAKE SURE THIS LINE IS ABOVE redis.so or apcu.so or memcached.so, if you added those**):
 >>`extension=igbinary.so`
 
 ####Redis:
@@ -53,7 +53,7 @@
 >>`make`  
 >>`sudo make install`
 
->Add this to the "Dynamic Extensions" section of the php.ini files (**MAKE SURE THIS LINE IS ABOVE redis.so or apcu.so or memcached.so, if you added those**):
+>Add this to the "Dynamic Extensions" section of the php.ini files:
 >>`extension=redis.so`
 
 ####APCu:
