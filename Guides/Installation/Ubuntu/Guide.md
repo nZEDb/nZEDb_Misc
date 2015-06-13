@@ -107,7 +107,7 @@ Only install one of the following three to avoid issues.
 >>`sudo nano /etc/apt/sources.list.d/percona.list`
 
 >Paste the deb and deb-src lines, replacing VERSION with the name of your ubuntu: (12.04: precise,
-12.10: quantal, 13.04: raring, 13.10: saucy, 14.04: trusty, 14.10: utopic).
+12.10: quantal, 13.04: raring, 13.10: saucy, 14.04: trusty, 14.10: utopic, [full list](https://wiki.ubuntu.com/Releases)).
 
 >>`deb http://repo.percona.com/apt VERSION main`
 
