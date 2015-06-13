@@ -88,13 +88,13 @@ you will need to do some research to figure out which is the best for you.
 We recommend MariaDB for most people.
 Only install one of the following three to avoid issues.
 
->[MySQL](http://dev.mysql.com/doc/refman/5.6/en/features.html):
->>`sudo apt-get install mysql-server mysql-client libmysqlclient-dev`
+>[MariaDB - Recommended](https://mariadb.com/kb/en/mariadb-versus-mysql-compatibility/):
+>>`sudo apt-get install mariadb-server mariadb-client libmysqlclient-dev`
 
 ---
 
->[MariaDB](https://mariadb.com/kb/en/mariadb-versus-mysql-compatibility/):
->>`sudo apt-get install mariadb-server mariadb-client libmysqlclient-dev`
+>[MySQL](http://dev.mysql.com/doc/refman/5.6/en/features.html):
+>>`sudo apt-get install mysql-server mysql-client libmysqlclient-dev`
 
 ---
 
