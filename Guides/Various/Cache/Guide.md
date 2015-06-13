@@ -45,11 +45,13 @@
 
 >If you installed igbinary:
 >>`./configure --enable-redis-igbinary`  
->>`make && make install`
+>>`make`  
+>>`sudo make install`
 
 >If not:
 >>`./configure`  
->>`make && make install`
+>>`make`  
+>>`sudo make install`
 
 >Add this to the "Dynamic Extensions" section of the php.ini files:
 >>`extension=redis.so`
