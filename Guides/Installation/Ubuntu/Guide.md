@@ -141,9 +141,9 @@ Only install one of the following three to avoid issues.
 
 >>`sudo mysql -u root -p`
 
->>`GRANT ALL ON mydb.* TO 'YourMySQLUsername'@'YourMySQLServerHostName' IDENTIFIED BY 'CoolPassword';`
+>>`GRANT ALL ON nzedb.* TO 'YourMySQLUsername'@'YourMySQLServerHostName' IDENTIFIED BY 'CoolPassword';`
 
->>>Note: Change 'mydb', 'YourMySQLUsername', and 'YourMySQLServerHostName' to appropriate values for your configuration.
+>>>Note: Change 'nzedb' (this is the database name), 'YourMySQLUsername', and 'YourMySQLServerHostName' to appropriate values for your configuration.
 
 >**[Mandatory]** Add file permission to your MySQL user.
 
