@@ -33,9 +33,12 @@ They might already be installed on your operating system.
 >>`sudo apt-get install software-properties-common python-software-properties git`
 
 ### Step 3 **[Optional]** *Adding a repository for the newest PHP:*
->This will give you the latest PHP (it has Apache2 as a dependency and will install it, but you can remove that later if you prefer nginx or another web server), PHP 5.5 is highly recomended,
+>This will give you the latest PHP (it has Apache2 as a dependency and will install it, but you can remove that later if you prefer nginx or another web server), PHP 5.5 is the minimum required version,
 if you operating system does not have PHP 5.5, please add this repository.
 >>`sudo add-apt-repository ppa:ondrej/php5`
+
+>Alternatively, you can add PHP 5.6 which is the current supported version of PHP.
+>>`sudo add-apt-repository ppa:ondrej/php5-5.6`
 
 >>`sudo apt-get update`
 
