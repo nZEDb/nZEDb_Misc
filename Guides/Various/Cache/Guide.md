@@ -33,7 +33,7 @@
 
 ####Redis:
 >Install dependencies:
->>`sudo apt-get install php5-dev gcc make`
+>>`sudo apt-get install php5-dev gcc make redis-server`
 
 >Download the source:
 >>`cd ~/`  
