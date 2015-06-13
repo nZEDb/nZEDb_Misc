@@ -28,7 +28,7 @@
 >>`make test`  
 >>`sudo make install`
 
->Add this to the "Dynamic Extensions" section of the php.ini files(**MAKE SURE THIS LINE IS ABOVE redis.so or apcu.so or memcached.so, if you added those**):
+>Add this to the "Dynamic Extensions" section of the php.ini files:
 >>`extension=igbinary.so`
 
 ####Redis:
@@ -53,8 +53,29 @@
 >>`make`  
 >>`sudo make install`
 
->Add this to the "Dynamic Extensions" section of the php.ini files:
+>Add this to the "Dynamic Extensions" section of the php.ini files(**MAKE SURE THIS LINE IS UNDER igbinary.so IF YOU ARE USING igbinary**):
 >>`extension=redis.so`
+
+####Memcached:
+>Install memcached:
+>>`sudo apt-get install memcached`
+
+>Install the PHP extension without Igbinary support:
+>>`sudo apt-get install php5-memcached`
+
+>Build memcached extension from source for Igbinary support:
+
+>Install dependencies:
+>>`sudo apt-get install wget php5-dev gcc make libmemcached-dev`
+
+>Download the source code:
+>>`cd ~/ && wget http://pecl.php.net/get/memcached`  
+>>`mkdir -p memcached_source && tar -xzvf memcached -C memcached_source/ --strip-components 1 && cd memcached_source`  
+>>`phpize`  
+>>`./configure --enable-memcached-igbinary`  
+>>`make`  
+>>`make test`  
+>>`sudo make install`
 
 ####APCu:
 >Install it:
