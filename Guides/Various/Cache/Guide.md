@@ -36,3 +36,5 @@
     apc.shm_size=32M
     apc.ttl=7200
     apc.enable_cli=1
+
+>See [here](https://php.net/manual/en/apc.configuration.php) for configuration options.
