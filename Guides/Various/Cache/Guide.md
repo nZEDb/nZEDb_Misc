@@ -11,31 +11,48 @@
 ####[Optional] Igbinary:
 >This is an alternative to PHP's built in serializer.  
 >The cache servers can be compiled or configured to use this.  
->To learn more, read the [documentation](https://github.com/igbinary/igbinary/blob/master/README.md).  
+>To learn more, read the [documentation](https://github.com/igbinary/igbinary/blob/master/README.md).
 
 >Install dependencies:
->>`sudo apt-get install php5-dev gcc make`  
+>>`sudo apt-get install php5-dev gcc make`
 
 >Download the source code:
 >>`cd ~/`  
 >>`git clone https://github.com/igbinary/igbinary.git`  
->>`cd ~/igbinary/`  
+>>`cd ~/igbinary/`
 
 >Compile:
 >>`phpize`  
 >>`./configure CFLAGS="-O2 -g" --enable-igbinary`  
 >>`make`  
 >>`make test`  
->>`sudo make install`  
+>>`sudo make install`
 
 >Add this to the "Dynamic Extensions" section of the php.ini files:
 >>`extension=igbinary.so`
 
 ####Redis:
+>Install dependencies:
+>>`sudo apt-get install php5-dev gcc make`
+
 >Download the source:
 >>`cd ~/`  
 >>`git clone https://github.com/nicolasff/phpredis.git`  
->>`cd ~/phpredis/`  
+>>`cd ~/phpredis/`
+
+>Compile:
+>>`phpize`
+
+>If you installed igbinary:
+>>`./configure --enable-redis-igbinary`
+
+>If not:
+>>`./configure`  
+
+>>`make && make install`
+
+>Add this to the "Dynamic Extensions" section of the php.ini files:
+>>`extension=redis.so`
 
 ####APCu:
 >Install it:
