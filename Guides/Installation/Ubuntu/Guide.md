@@ -32,14 +32,18 @@ but higher versions (MySQL 5.6 to be exact) are recommended. For 32 bit Operatin
 They might already be installed on your operating system.
 >>`sudo apt-get install software-properties-common python-software-properties git`
 
-### Step 3 **[Optional]** *Adding a repository for the newest PHP:*
->This will give you the latest PHP (it has Apache2 as a dependency and will install it, but you can remove that later if you prefer nginx or another web server), PHP 5.5 is the minimum required version,
-if you operating system does not have PHP 5.5, please add this repository.
+### Step 3 *Adding a repository for the minimum supported PHP version:*
+>nZEDb supports PHP version 5.5 or higher, if your distro does not have 5.5+, you must add a repository.
+
+>To check your current PHP version, type:
+>>`php -v`
+
+>>To add php 5.5, type the following commands:
 >>`sudo add-apt-repository ppa:ondrej/php5`
 
 >>`sudo apt-get update`
 
->*Alternatively*, you can add PHP 5.6 which is the current supported version of PHP.
+>*Alternatively*, you can add PHP 5.6 which is the current supported version of PHP, PHP 5.5 will only be getting security updates from now on.
 >>`sudo add-apt-repository ppa:ondrej/php5-5.6`
 
 >>`sudo apt-get update`
