@@ -473,10 +473,9 @@ https://github.com/jonnyboy/installers/blob/master/compile_ffmpeg.sh
 
 ---
 
->*[Memcached](http://memcached.org/)*
->>`sudo apt-get install memcached php5-memcached`
+>[Cache servers](https://github.com/nZEDb/nZEDb_Misc/blob/master/Guides/Various/Cache/Guide.md)
 
->After git cloning and seting up the indexer, edit www/config.php, change MEMCACHE_ENABLED to true.
+>After git cloning and seting up the indexer, edit www/settings.php, change the various Cache settings.
 
 ---
 
