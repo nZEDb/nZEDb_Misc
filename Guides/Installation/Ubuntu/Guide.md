@@ -559,11 +559,11 @@ simple_php_yenc_decode or yydecode installed.
 >Set the permissions:
 
 >During the install (next step of this guide) you should set perms to 777 to make things easier, otherwise you might fail on step 2 of the web install:
->>`chmod -R 777 /var/www/nZEDb/libs/smarty/templates_c`
+>>`sudo chmod -R 777 /var/www/nZEDb/libs/smarty/templates_c`
 
->>`chmod -R 777 /var/www/nZEDb/resources`
+>>`sudo chmod -R 777 /var/www/nZEDb/resources`
 
->>`chmod -R 777 /var/www/nZEDb/www`
+>>`sudo chmod -R 777 /var/www/nZEDb/www`
 
 ### Step 12 *Setting up nZEDb:*
 
