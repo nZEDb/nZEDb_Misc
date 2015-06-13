@@ -6,7 +6,11 @@
 >the fpm php.ini is here (if you use nginx): `/etc/php5/fpm/php.ini`  
 >On other operating systems, there might be only 1 php.ini
 
-####Igbinary:
+####[Optional] Igbinary:
+>This is an alternative to PHP's built in serializer.  
+>The cache servers can be compiled or configured to use this.  
+>To learn more, read the [documentation](https://github.com/igbinary/igbinary/blob/master/README.md).
+
 >Install dependencies:
 >>`sudo apt-get install php5-dev gcc make`
 
@@ -38,3 +42,6 @@
     apc.enable_cli=1
 
 >See [here](https://php.net/manual/en/apc.configuration.php) for configuration options.
+
+>If you installed igbinary, enable it for apc (add it to /etc/php5/cli/conf.d/20-apcu.ini):
+>>`apc.serializer=igbinary`
