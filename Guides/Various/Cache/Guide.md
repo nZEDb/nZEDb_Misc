@@ -13,6 +13,7 @@ Guide for installing cache servers for nZEDb.
 >>For most other web servers (like nginx), usually you use php-fpm, the corresponding php.ini is here: `/etc/php5/fpm/php.ini`
 
 >Which cache server to install?
+>>If you are unsure, you should install APCu.  
 >>You can install all 3 cache servers listed below, but only 1 can be configured to be used in nZEDb.  
 >>Some people will install multiple cache servers because they have various projects that require different ones.  
 >>In terms of performance, APCu should be the fastest, but it can only be used on the same server nZEDb runs.  
