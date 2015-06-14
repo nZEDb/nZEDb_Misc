@@ -38,7 +38,7 @@ Guide for installing cache servers for nZEDb.
 
 ####[Optional] Igbinary:
 >This is an alternative to PHP's built in serializer.  
->The cache servers can be compiled or configured to use this.  
+>The cache servers can be compiled/configured to use this.  
 >To learn more, read the [documentation](https://github.com/igbinary/igbinary/blob/master/README.md).
 
 >Install dependencies:
