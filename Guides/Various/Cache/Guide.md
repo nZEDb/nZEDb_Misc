@@ -66,6 +66,8 @@ Guide for installing cache servers for nZEDb.
 ---
 
 ####Redis:
+>This is a popular general purpose cache server, you can read about it [here](http://redis.io/topics/introduction).
+
 >Install dependencies:
 >>`sudo apt-get install php5-dev gcc make redis-server`
 
@@ -97,6 +99,8 @@ Guide for installing cache servers for nZEDb.
 ---
 
 ####Memcached:
+>This is another popular general purpose caching server, read about it [here](http://memcached.org/about).
+
 >Install memcached:
 >>`sudo apt-get install memcached`
 
@@ -130,6 +134,8 @@ Guide for installing cache servers for nZEDb.
 ---
 
 ####APCu:
+>This is a cache server which integrates into PHP. You can read it about [here](https://github.com/krakjoe/apcu#apcu)
+
 >Install the php extension (this one supports igbinary):
 >>`sudo apt-get install php5-apcu`
 
