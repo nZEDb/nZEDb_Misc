@@ -32,7 +32,7 @@ Guide for installing cache servers for nZEDb.
 >PHP sessions:
 >>This guide touches various options on PHP sessions.  
 >>You can read about PHP sessions [here](https://php.net/manual/en/features.sessions.php).  
->>You might want to look at the various options for PHP sessions [here](https://php.net/manual/en/session.configuration.php#ini.session.serialize-handler).
+>>You might want to look at the various options for PHP sessions [here](https://php.net/manual/en/session.configuration.php).
 
 ---
 
