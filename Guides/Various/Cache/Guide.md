@@ -18,7 +18,7 @@ Guide for installing cache servers for nZEDb.
 >>Some people will install multiple (different) cache servers because they have various projects that require different ones.  
 >>In terms of performance, APCu should be the fastest, but it can only be used on the same server nZEDb runs.  
 >>If run on the same server as nZEDb and using sockets, Memcached / Redis should be only slightly slower to APCu in terms of performance.  
->>You can install multiple Memcached or Redis servers, multiple servers can be connected to, unlike APCu.
+>>You can install multiple Memcached or Redis servers, multiple (of the same type - 3 memcached servers for example) servers can be connected to, unlike APCu.
 
 >How does caching benefit nZEDb?
 >>nZEDb uses these cache servers to cache mainly MySQL query results.  
