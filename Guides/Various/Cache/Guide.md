@@ -25,8 +25,8 @@ Guide for installing cache servers for nZEDb.
 >>When a person loads up a web page, the MySQL database is queried, if you have turned on caching, the result of those queries is stored in the cache server(s), the next time some one loads the page, it will fetch the data from the cache server(s), which is faster than asking MySQL to create the data again.
 
 >How do I configure nZEDb to use cache server(s)?
->>You must first copy the [www/settings.php.example](https://github.com/nZEDb/nZEDb/blob/master/www/settings.php.example) file to settings.php  
->>Open up the settings.php file in a text editor, scroll down to the "Cache Settings" section.  
+>>You must first copy the [www/settings.php.example](https://github.com/nZEDb/nZEDb/blob/master/www/settings.php.example) file to www/settings.php  
+>>Open up the www/settings.php file in a text editor, scroll down to the "Cache Settings" section.  
 >>Read the various settings descriptions and fill out the required details.
 
 >PHP sessions:
