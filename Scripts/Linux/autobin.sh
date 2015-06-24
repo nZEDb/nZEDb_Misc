@@ -53,6 +53,7 @@ WHICH="/usr/bin/which"
 # Note if you set a path like /usr/local/bin you need to run this script with root permissions.
 # If you use $HOME like the default, add this folder to your PATH by editing your ~/.profile file,
 # something like this: PATH="$HOME/bin:$PATH"
+# Note you might have to reboot if you add a folder to the PATH.
 INSTALL_PATH="$HOME/bin"
 
 # Path to download temp files. Note, contents will be deleted at the end of the script.
