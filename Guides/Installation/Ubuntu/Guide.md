@@ -361,7 +361,7 @@ Save and exit nano.
 >Restart Nginx and php5-fpm:
 >>`sudo service nginx restart`
 
->>`sudo service php5-fpm restart` or `sudo /etc/init.d/php5-fpm restart` if the previous does not function.
+>>`sudo service php5-fpm restart` or `sudo /etc/init.d/php5-fpm restart`
 
 ---
 ### Step 8.1 *Add your user to the www-data group*
@@ -401,10 +401,10 @@ If you have installed Apache2: `sudo nano /etc/php5/apache2/php.ini`
 If you have installed Nginx:   `sudo nano /etc/php5/fpm/php.ini`
 >Change the settings using the same settings as the CLI SAPI.
 
->Restart Apache2 or Nginx:
+>Restart Apache2 or PHP-FPM (if you use nginx for example):
 >>`sudo service apache2 restart`
 
->>`sudo service nginx restart`
+>>`sudo service php5-fpm restart`
 
 ### Step 10 *Installing extra, optional software:*
 
