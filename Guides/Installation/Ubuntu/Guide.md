@@ -141,16 +141,14 @@ Only install one of the following three to avoid issues.
 
 >>`sudo mysql -u root -p`
 
->nzedb is the databasename, you can change this if you want.
->Change YourMySQLServerHostName to the hostname of the server.
+>nzedb is the databasename, you can change this if you want.  
+>Change YourMySQLServerHostName to the hostname of the server.  
 If your MySQL server is local, use localhost. If remote, try the domain name or IP address.
-It has been reported 127.0.0.1 does not work for the hostname.
->Change YourMySQLUsername for the username you will use to connect to MySQL in nZEDb.
+It has been reported 127.0.0.1 does not work for the hostname.  
+>Change YourMySQLUsername for the username you will use to connect to MySQL in nZEDb.  
 >Do not remove the quotes on the name / hostname / password.
 
 >>`GRANT ALL ON nzedb.* TO 'YourMySQLUsername'@'YourMySQLServerHostName' IDENTIFIED BY 'SomePassword';`
-
->>>Note: Change 'nzedb' (this is the database name), 'YourMySQLUsername', and 'YourMySQLServerHostName' to appropriate values for your configuration.
 
 >**[Mandatory]** Add file permission to your MySQL user.
 
