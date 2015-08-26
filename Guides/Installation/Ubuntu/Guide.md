@@ -364,8 +364,8 @@ Save and exit nano.
 
 ---
 ### Step 8.1 *Add your user to the www-data group*
->Regardless of which web server you use, you should add your user to the www-data group so that you may create/edit files belonging to the group.
->>`sudo usermod -a -G www-data YourUnixUserName`
+>Regardless of which web server you use, you should add your user to the www-data group so that you may create/edit files belonging to the group. Replace $USER for your username, if you will not use the current user for nzedb.
+>>`sudo usermod -a -G www-data $USER`
 
 >This requires you to log back in before it takes effect. Do so now or before the Aquiring nZEDb step.
 >>`sudo reboot`
