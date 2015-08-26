@@ -35,8 +35,8 @@ They might already be installed on your operating system.
 ### Step 3 *Adding a repository for the minimum supported PHP version:*
 >nZEDb supports PHP version 5.5 or higher, if your distro does not have 5.5+, you must add a repository.
 
->To check your current PHP version, type:
->>`php -v`
+>To check the available PHP version, type:
+>>`apt-cache policy php5-cli | grep Candidate`
 
 >To add php 5.5, type the following commands:
 >>`sudo add-apt-repository ppa:ondrej/php5`
@@ -414,13 +414,11 @@ If you have installed Nginx:   `sudo nano /etc/php5/fpm/php.ini`
 >> `sudo apt-get install unrar`
 
 >You can also install it by downloading the newest version (recommended, as some RAR files require version 5+):
->Go to http://www.rarlab.com/download.htm, look for the newest unrar version (currently RAR 5.10), right click it and copy the link.
+>Go to http://www.rarlab.com/download.htm, look for the newest unrar version (5.21 when this was written), right click it and copy the link.
 >Replace the link below with the one you copied:
->>`mkdir -p ~/new_unrar`
+>>`mkdir -p ~/new_unrar && cd ~/new_unrar`
 
->>`cd ~/new_unrar`
-
->>`wget http://www.rarlab.com/rar/rarlinux-x64-5.1.0.tar.gz`
+>>`wget http://www.rarlab.com/rar/rarlinux-x64-5.2.1.tar.gz`
 
 >>`tar -xzf rarlinux*.tar.gz`
 
@@ -430,9 +428,7 @@ If you have installed Nginx:   `sudo nano /etc/php5/fpm/php.ini`
 
 >>`sudo chmod 755 /usr/bin/unrar`
 
->>`cd ~/`
-
->>`rm -rf ~/new_unrar`
+>>`cd ~/ && rm -rf ~/new_unrar`
 
 ---
 
