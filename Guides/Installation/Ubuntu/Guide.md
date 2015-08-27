@@ -88,7 +88,7 @@ you will need to do some research to figure out which is the best for you.
 We recommend MariaDB for most people.
 Only install one of the following three to avoid issues.
 
->[MariaDB(we recommend this)](https://mariadb.com/kb/en/mariadb-versus-mysql-compatibility/):
+>[MariaDB (we recommend this)](https://mariadb.com/kb/en/mariadb-versus-mysql-compatibility/):
 >>`sudo apt-get install mariadb-server mariadb-client libmysqlclient-dev`
 
 ---
