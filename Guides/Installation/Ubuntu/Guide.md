@@ -470,7 +470,7 @@ https://github.com/jonnyboy/installers/blob/master/compile_ffmpeg.sh
 
 >[Cache servers](https://github.com/nZEDb/nZEDb_Misc/blob/master/Guides/Various/Cache/Guide.md)
 
->After git cloning and seting up the indexer, edit www/settings.php, change the various Cache settings.
+>After git cloning and seting up the indexer, edit www/settings.php, change the various Cache settings. Guide [here](https://github.com/nZEDb/nZEDb_Misc/blob/master/Guides/Various/Cache/Guide.md).
 
 ---
 
