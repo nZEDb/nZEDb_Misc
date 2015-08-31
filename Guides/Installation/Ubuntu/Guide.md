@@ -405,7 +405,7 @@ If you have installed Nginx:   `sudo nano /etc/php5/fpm/php.ini`
 
 >>`sudo service php5-fpm restart`
 
-### Step 10 *Installing extra, optional software:*
+### Step 10 *Installing extra software:*
 
 >*[Unrar](http://en.wikipedia.org/wiki/Unrar):*
 
@@ -660,7 +660,7 @@ nZEDb sites and are throttled so you will get almost no results from those.
 
 >There are other automated scripts, you can open them in a text editor or ask around / do research to see what they do.
 
-### Step 14 *Extra, optional stuff:*
+### Step 14 *Extra stuff:*
 
 >**IRCScraper:**
 
