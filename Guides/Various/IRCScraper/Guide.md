@@ -16,7 +16,7 @@ IRCScraper Setup Guide
 
 ### Step 2 *Editing the settings file:*
 >Open the settings file with a text editor:
->>`nano nzedb/config/ircscraper_settings.ph`
+>>`nano nzedb/config/ircscraper_settings.php`
 
 >Change `$username` to the username you want.  
 ie: `$username = 'myBot';`  
