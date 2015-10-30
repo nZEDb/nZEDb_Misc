@@ -11,7 +11,7 @@ IRCScraper Setup Guide
 >Move to the nZEDb root folder:
 >>`cd /var/www/nZEDb/`
 
->Copy ircscraper_settings_example.php to ircscraper_settings.php.php:
+>Copy ircscraper_settings_example.php to ircscraper_settings.php:
 >>`cp nzedb/config/ircscraper_settings_example.php nzedb/config/ircscraper_settings.php`
 
 ### Step 2 *Editing the settings file:*
