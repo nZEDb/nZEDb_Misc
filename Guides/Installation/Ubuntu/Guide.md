@@ -156,7 +156,7 @@ It has been reported 127.0.0.1 does not work for the hostname.
 >>`GRANT FILE ON *.* TO 'YourMySQLUsername'@'YourMySQLServerHostName';`
 
 >Exit MySQL:
->>`\q`
+>>`quit;`
 
 ### Step 8 *Installing and configuring a web server:*
 >You have many options. We will however show you 2 options, Apache2 or Nginx.
