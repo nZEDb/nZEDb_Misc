@@ -610,6 +610,8 @@ nZEDb sites and are throttled so you will get almost no results from those.
 
 >Run the script using screen:
 >>`screen sh simple.sh`
+or
+>>`screen sh simple-expanded.sh` 
 
 >Now everything will run automatically.
 
