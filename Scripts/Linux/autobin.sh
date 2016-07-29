@@ -208,7 +208,7 @@ if [[ "$_MEDIAINFO" == true ]]; then
 		fi
 		REMOTE_VERSION=$(cat "mediainfo.html" | grep -m 1 -Poi 'CLI_\d[\d.]+\d')
 		if [[ "$REMOTE_VERSION" != "$LOCAL_VERSION" ]]; then
-			curl -sL $(cat "mediainfo.html" | grep -m 1 -Poi 'http.+?CLI.+?\.tar\.bz2') > mediainfo.tar.bz2
+			curl -sL "https:$(cat "mediainfo.html" | grep -m 1 -Poi '//mediaarea.net/download/binary/mediainfo/[^<>]+?Source\.tar\.bz2')" > mediainfo.tar.bz2
 			if [[ -f  "mediainfo.tar.bz2" ]]; then
 				mkdir -p mediainfo && tar -xvjf mediainfo.tar.bz2 -C "mediainfo/" --strip-components 1 && cd "mediainfo/"
 				sh CLI_Compile.sh
