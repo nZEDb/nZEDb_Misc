@@ -144,9 +144,9 @@ if [[ "$_UNRAR" == true ]]; then
 		if [[ "$REMOTE_VERSION" != "$LOCAL_VERSION" ]]; then
 			URL_STRING=""
 			if [[ "$ARCH" == "x64" ]]; then
-				URL_STRING=$(cat "unrar.html" | grep -Poi '/rar/rarlinux-x64-.+?\.tar.gz')
+				URL_STRING=$(cat "unrar.html" | grep -Poi '/rar/rarlinux-x64-[\d.]+\.tar.gz')
 			else
-				URL_STRING=$(cat "unrar.html" | grep -Poi '/rar/rarlinux-.+?\.tar.gz')
+				URL_STRING=$(cat "unrar.html" | grep -Poi '/rar/rarlinux-[\d.]+\.tar.gz')
 			fi
 			curl -sL "http://www.rarlab.com$URL_STRING" > "unrar.tar.gz"
 			if [[ -f "unrar.tar.gz" ]]; then
