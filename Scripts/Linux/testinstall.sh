@@ -28,7 +28,7 @@ GPLV3
 ############################################################################################################
 
 # nzedb path
-NZEDBPATH="/var/www/nZEDb/"
+NZEDBPATH="/var/www/nZEDb"
 
 # Web hostname for nzedb site (http://$HOST/)
 HOST="localhost"
