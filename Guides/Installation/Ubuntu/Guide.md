@@ -46,7 +46,7 @@ They might already be installed on your operating system.
 ### Step 4 *Installing PHP and the required extensions:*
 > Note that some extensions might be missing here,
 see INSTALL.txt in the nZEDb docs folder for all the required extensions.
->>`sudo apt-get install php5.6 php5-cli php5-dev php5-json php-pear php5-gd php5-mysqlnd php5-curl`
+>>`sudo apt-get install  php5.6 php5.6-cli php5.6-dev php5.6-json php-pear php5.6-gd php5-mysqlnd php5.6-curl`
 
 ### Step 5 **[Mandatory]** *Apparmor:*
 >Apparmor restricts certain programs, on nZEDb it stops us from using the
