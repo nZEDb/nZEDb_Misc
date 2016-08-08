@@ -35,7 +35,7 @@ They might already be installed on your operating system.
 ### Step 3 *Adding a repository for the minimum supported PHP version:*
 >nZEDb supports PHP version 5.6 or higher, if your distro does not have 5.6+, you must add a repository.
 
->To add PHP 5.6 or 7 which is the current supported version of PHP:
+>To add PHP 5.6 or 7 which are the current supported versions of PHP:
 >>`sudo add-apt-repository ppa:ondrej/php`
 
 >>`sudo apt-get update`
