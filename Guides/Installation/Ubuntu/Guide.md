@@ -39,14 +39,14 @@ They might already be installed on your operating system.
 >>`apt-cache policy php5-cli | grep Candidate`
 
 >To add PHP 5.6 which is the current supported version of PHP:
->>`sudo add-apt-repository ppa:ondrej/php5-5.6`
+>>`sudo add-apt-repository ppa:ondrej/php`
 
 >>`sudo apt-get update`
 
 ### Step 4 *Installing PHP and the required extensions:*
 > Note that some extensions might be missing here,
 see INSTALL.txt in the nZEDb docs folder for all the required extensions.
->>`sudo apt-get install php5 php5-cli php5-dev php5-json php-pear php5-gd php5-mysqlnd php5-curl`
+>>`sudo apt-get install php5.6 php5-cli php5-dev php5-json php-pear php5-gd php5-mysqlnd php5-curl`
 
 ### Step 5 **[Mandatory]** *Apparmor:*
 >Apparmor restricts certain programs, on nZEDb it stops us from using the
