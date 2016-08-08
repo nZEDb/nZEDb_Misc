@@ -35,10 +35,7 @@ They might already be installed on your operating system.
 ### Step 3 *Adding a repository for the minimum supported PHP version:*
 >nZEDb supports PHP version 5.6 or higher, if your distro does not have 5.6+, you must add a repository.
 
->To check the available PHP version, type:
->>`apt-cache policy php5-cli | grep Candidate`
-
->To add PHP 5.6 which is the current supported version of PHP:
+>To add PHP 5.6 or 7 which is the current supported version of PHP:
 >>`sudo add-apt-repository ppa:ondrej/php`
 
 >>`sudo apt-get update`
@@ -46,7 +43,12 @@ They might already be installed on your operating system.
 ### Step 4 *Installing PHP and the required extensions:*
 > Note that some extensions might be missing here,
 see INSTALL.txt in the nZEDb docs folder for all the required extensions.
->>`sudo apt-get install  php5.6 php5.6-cli php5.6-dev php5.6-json php-pear php5.6-gd php5-mysqlnd php5.6-curl`
+
+> For PHP 5.6:
+>>`sudo apt-get install php5.6 php5.6-cli php5.6-dev php5.6-json php-pear php5.6-gd php5-mysqlnd php5.6-curl php5.6-common php5.6-mcrypt php5.6-mbstring php5.6-xml`
+
+> For PHP 7:
+>>`sudo apt-get install php-pear php7.0 php7.0-cli php7.0-dev php7.0-common php7.0-curl php7.0-json php7.0-gd php7.0-mysql php7.0-mbstring php7.0-mcrypt php7.0-xml`
 
 ### Step 5 **[Mandatory]** *Apparmor:*
 >Apparmor restricts certain programs, on nZEDb it stops us from using the
@@ -368,7 +370,7 @@ Save and exit nano.
 
 ### Step 9 *Configuring PHP:*
 
->Open php.ini for the CLI SAPI:
+>Open php.ini for the CLI SAPI (for PHP7 /etc/php7.0/cli/php.ini):
 >>`sudo nano /etc/php5/cli/php.ini`
 
 >Change the following settings:
@@ -390,7 +392,7 @@ Save and exit nano.
 
 >Close and save this file.
 
->Open the Web SAPI php.ini.
+>Open the Web SAPI php.ini (for PHP7 /etc/php7.0/).
 If you have installed Apache2: `sudo nano /etc/php5/apache2/php.ini`
 If you have installed Nginx:   `sudo nano /etc/php5/fpm/php.ini`
 >Change the settings using the same settings as the CLI SAPI.
