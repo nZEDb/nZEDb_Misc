@@ -7,7 +7,7 @@ Ubuntu Web Guide.
 `this is an example`
 When you see these, you must type them into a command line interface (terminal window).
 
-> PHP 5.5 and MySQL 5.5 are the minimum required versions,
+> PHP 5.6 and MySQL 5.5 are the minimum required versions,
 but higher versions (MySQL 5.6 to be exact) are recommended. For 32 bit Operating Systems, PHP 5.6+ is required (to fix a bug in a required feature).
 
 ### Step 1 *Updating your operating system:*
@@ -33,17 +33,12 @@ They might already be installed on your operating system.
 >>`sudo apt-get install software-properties-common python-software-properties git`
 
 ### Step 3 *Adding a repository for the minimum supported PHP version:*
->nZEDb supports PHP version 5.5 or higher, if your distro does not have 5.5+, you must add a repository.
+>nZEDb supports PHP version 5.6 or higher, if your distro does not have 5.6+, you must add a repository.
 
 >To check the available PHP version, type:
 >>`apt-cache policy php5-cli | grep Candidate`
 
->To add php 5.5, type the following commands:
->>`sudo add-apt-repository ppa:ondrej/php5`
-
->>`sudo apt-get update`
-
->*Alternatively*, you can add PHP 5.6 which is the current supported version of PHP, PHP 5.5 will only be getting security updates from now on.
+>To add PHP 5.6 which is the current supported version of PHP:
 >>`sudo add-apt-repository ppa:ondrej/php5-5.6`
 
 >>`sudo apt-get update`
