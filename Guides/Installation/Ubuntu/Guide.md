@@ -162,6 +162,9 @@ Only install Apache2 or Nginx, do not install both to avoid issues.
 >*[Apache](http://httpd.apache.org/):*
 >>`sudo apt-get install apache2`
 
+>If you have installed PHP 7, you also need to install the following package:
+>>`sudo apt-get install libapache2-mod-php7.0`
+
 >Now you need to check if you have apache 2.2 or apache 2.4,
 they require a different configuration.
 >>`apache2 -v`
