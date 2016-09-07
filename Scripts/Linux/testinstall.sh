@@ -144,49 +144,49 @@ fi
 curlPage "step1.php?"
 
 if [[ ! $PAGE =~ "No problems were found and you are ready to install." ]]; then
-	echo "ERROR: Problem on $HTTP://$HOST/install/step1.php"
+	echo "$PAGE\nERROR: Problem on $HTTP://$HOST/install/step1.php"
 	exit 1
 fi
 
 curlPage "step2.php?" "step1.php?" "db_system=mysql&host=$DBHOST&sql_port=$DBPORT&sql_socket=$DBSOCKET&user=$DBUSER&pass=$DBPASS&db=$DBNAME"
 
 if [[ ! $PAGE =~ "The database setup is correct, you may continue to the next step." ]]; then
-	echo "ERROR: Problem on $HTTP://$HOST/install/step2.php"
+	echo "$PAGE\nERROR: Problem on $HTTP://$HOST/install/step2.php"
 	exit 1
 fi
 
 curlPage "step3.php?" "step2.php?" "cafile=$SSLCAFILE&capath=$SSLCAPATH&verifypeer=$SSLVERIFYPEER&verifyhost=$SSLVERIFYHOST&allowselfsigned=$SSLALLOWSELFSIGNED"
 
 if [[ ! $PAGE =~ "The openssl setup looks correct, you may continue to the next step." ]]; then
-	echo "ERROR: Problem on $HTTP://$HOST/install/step3.php"
+	echo "$PAGE\nERROR: Problem on $HTTP://$HOST/install/step3.php"
 	exit 1
 fi
 
 curlPage "step4.php?" "step3.php?" "server=$NNTPSERVER&user=$NNTPUSER&pass=$NNTPPASS&port=$NNTPPORT&socket_timeout=$NNTPSOCKTIMEOUT&servera=$NNTPSERVER2&usera=$NNTPUSER2&passa=$NNTPPASS2&porta=$NNTPPORT2&socket_timeouta=$NNTPSOCKTIMEOUT2"
 
 if [[ ! $PAGE =~ "The news server setup is correct, you may continue to the next step." ]]; then
-	echo "ERROR: Problem on $HTTP://$HOST/install/step4.php"
+	echo "$PAGE\nERROR: Problem on $HTTP://$HOST/install/step4.php"
 	exit 1
 fi
 
 curlPage "step5.php?" "step4.php?"
 
 if [[ ! $PAGE =~ "The configuration file has been saved, you may continue to the next step." ]]; then
-	echo "ERROR: Problem on $HTTP://$HOST/install/step5.php"
+	echo "$PAGE\nERROR: Problem on $HTTP://$HOST/install/step5.php"
 	exit 1
 fi
 
 curlPage "step6.php?" "step5.php?" "user=$ADMINUSER&fname=$ADMINFIRSTNAME&lname=$ADMINLASTNAME&pass=$ADMINPASS&email=$ADMINEMAIL"
 
 if [[ ! $PAGE =~ "The admin user has been setup, you may continue to the next step." ]]; then
-	echo "ERROR: Problem on $HTTP://$HOST/install/step6.php"
+	echo "$PAGE\nERROR: Problem on $HTTP://$HOST/install/step6.php"
 	exit 1
 fi
 
 curlPage "step7.php?" "step6.php?" "coverspath=$COVERPATH&nzbpath=$NZBPATH&tmpunrarpath=$TMPPATH"
 
 if [[ ! $PAGE =~ "Install Complete!" ]]; then
-	echo "ERROR: Problem on $HTTP://$HOST/install/step7.php"
+	echo "$PAGE\nERROR: Problem on $HTTP://$HOST/install/step7.php"
 	exit 1
 fi
 
