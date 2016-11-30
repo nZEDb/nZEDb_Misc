@@ -45,10 +45,10 @@ They might already be installed on your operating system.
 see INSTALL.txt in the nZEDb docs folder for all the required extensions.
 
 > For PHP 5.6:
->>`sudo apt-get install php5.6 php5.6-cli php5.6-dev php5.6-json php-pear php5.6-gd php5.6-mysql php5.6-pdo php5.6-curl php5.6-common php5.6-mcrypt php5.6-mbstring php5.6-xml`
+>>`sudo apt-get install php-pear php-imagick php5.6 php5.6-cli php5.6-dev php5.6-json php-pear php5.6-gd php5.6-mysql php5.6-pdo php5.6-curl php5.6-common php5.6-mcrypt php5.6-mbstring php5.6-xml`
 
 > For PHP 7:
->>`sudo apt-get install php-pear php7.0 php7.0-cli php7.0-dev php7.0-common php7.0-curl php7.0-json php7.0-gd php7.0-mysql php7.0-mbstring php7.0-mcrypt php7.0-xml`
+>>`sudo apt-get install php-pear php-imagick php7.0 php7.0-cli php7.0-dev php7.0-common php7.0-curl php7.0-json php7.0-gd php7.0-mysql php7.0-mbstring php7.0-mcrypt php7.0-xml`
 
 ### Step 5 **[Mandatory]** *Apparmor:*
 >Apparmor restricts certain programs, on nZEDb it stops us from using the
