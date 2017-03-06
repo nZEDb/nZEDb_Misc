@@ -85,8 +85,8 @@ TMPPATH="$NZEDBPATH/resources/tmp/unrar/"
 ############################################################################################################
 ############################################################################################################
 
-if [[ -e $NZEDBPATH/www/install/install.lock ]]; then
-	echo "ERROR: $NZEDBPATH/www/install/install.lock exists! Please remove the file before continuing."
+if [[ -e $NZEDBPATH/configuration/install.lock ]]; then
+	echo "ERROR: $NZEDBPATH/configuration/install.lock exists! Please remove the file before continuing."
 	exit 1
 fi
 
