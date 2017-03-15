@@ -12,11 +12,11 @@ IRCScraper Setup Guide
 >>`cd /var/www/nZEDb/`
 
 >Copy ircscraper_settings_example.php to ircscraper_settings.php:
->>`cp nzedb/config/ircscraper_settings_example.php nzedb/config/ircscraper_settings.php`
+>>`cp configuration/ircscraper_settings_example.php configuration/ircscraper_settings.php`
 
 ### Step 2 *Editing the settings file:*
 >Open the settings file with a text editor:
->>`nano nzedb/config/ircscraper_settings.php`
+>>`nano configuration/ircscraper_settings.php`
 
 >Change `$username` to the username you want.  
 ie: `$username = 'myBot';`  
