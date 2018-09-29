@@ -213,7 +213,7 @@ if [[ "$_MEDIAINFO" == true ]]; then
 				mkdir -p mediainfo && tar -xvjf mediainfo.tar.bz2 -C "mediainfo/" --strip-components 1 && cd "mediainfo/"
 				sh CLI_Compile.sh
 				cd "MediaInfo/Project/GNU/CLI"
-				rm -rf "$INSTALL_PATH/mediainfo" && sudmv mediainfo "$INSTALL_PATH/mediainfo"
+				rm -rf "$INSTALL_PATH/mediainfo" && sudo mv mediainfo "$INSTALL_PATH/mediainfo"
 				echo "$REMOTE_VERSION" > "$VERSIONS_PATH/mediainfo.txt"
 				echo "" && echo "Notice: mediainfo updated to version $REMOTE_VERSION"
 			else
