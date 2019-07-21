@@ -173,9 +173,9 @@ if [[ "$_FFMPEG" == true ]]; then
 		fi
 		REMOTE_VERSION=$(cat "ffmpeg.html" | grep -Po 'git:\s*[A-Za-z0-9]+' | awk '{print $2;}')
 		if [[ "$REMOTE_VERSION" != "$LOCAL_VERSION" ]]; then
-			URL_STRING="http://johnvansickle.com/ffmpeg/builds/ffmpeg-git-32bit-static.tar.xz"
+			URL_STRING="https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-i686-static.tar.xz"
 			if [[ "$ARCH" == "x64" ]]; then
-				URL_STRING="http://johnvansickle.com/ffmpeg/builds/ffmpeg-git-64bit-static.tar.xz"
+				URL_STRING="https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-amd64-static.tar.xz"
 			fi
 			curl -sL "$URL_STRING" > "ffmpeg.tar.xz"
 			if [[ -f "ffmpeg.tar.xz" ]]; then
